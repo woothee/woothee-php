@@ -28,9 +28,53 @@ namespace Woothee;
 // GENERATED from dataset.yml at {$timestamp} by {$user}
 class DataSet
 {
-    private static \$dataset = array(
+    const DATASET_KEY_LABEL            = 'label';
+    const DATASET_KEY_NAME             = 'name';
+    const DATASET_KEY_TYPE             = 'type';
+    const DATASET_KEY_CATEGORY         = 'category';
+    const DATASET_KEY_OS               = 'os';
+    const DATASET_KEY_VENDOR           = 'vendor';
+    const DATASET_KEY_VERSION          = 'version';
+
+    const DATASET_TYPE_BROWSER         = 'browser';
+    const DATASET_TYPE_OS              = 'os';
+    const DATASET_TYPE_FULL            = 'full';
+
+    const DATASET_CATEGORY_PC          = 'pc';
+    const DATASET_CATEGORY_SMARTPHONE  = 'smartphone';
+    const DATASET_CATEGORY_MOBILEPHONE = 'mobilephone';
+    const DATASET_CATEGORY_CRAWLER     = 'crawler';
+    const DATASET_CATEGORY_APPLIANCE   = 'appliance';
+    const DATASET_CATEGORY_MISC        = 'misc';
+
+    const ATTRIBUTE_NAME               = 'name';
+    const ATTRIBUTE_CATEGORY           = 'category';
+    const ATTRIBUTE_OS                 = 'os';
+    const ATTRIBUTE_VENDOR             = 'vendor';
+    const ATTRIBUTE_VERSION            = 'version';
+    const VALUE_UNKNOWN                = 'UNKNOWN';
+
+    public static \$CATEGORY_LIST = [
+        self::DATASET_CATEGORY_PC,
+        self::DATASET_CATEGORY_SMARTPHONE,
+        self::DATASET_CATEGORY_MOBILEPHONE,
+        self::DATASET_CATEGORY_CRAWLER,
+        self::DATASET_CATEGORY_APPLIANCE,
+        self::DATASET_CATEGORY_MISC,
+        self::VALUE_UNKNOWN,
+    ];
+
+    public static \$ATTRIBUTE_LIST = [
+        self::ATTRIBUTE_NAME,
+        self::ATTRIBUTE_CATEGORY,
+        self::ATTRIBUTE_OS,
+        self::ATTRIBUTE_VENDOR,
+        self::ATTRIBUTE_VERSION,
+    ];
+
+    private static \$dataset = [
 {$dataset}
-    );
+    ];
 
     public static function get(\$label)
     {
