@@ -1,10 +1,13 @@
 <?php
 namespace Woothee;
 
+use Woothee\AgentCategory\Browser\Firefox;
 use Woothee\AgentCategory\Browser\Msie;
+use Woothee\AgentCategory\Browser\Opera;
 use Woothee\AgentCategory\Browser\SafariChrome;
 use Woothee\AgentCategory\Crawler\Crawlers;
 use Woothee\AgentCategory\Crawler\Google;
+use Woothee\AgentCategory\Os\Osx;
 use Woothee\AgentCategory\Os\Windows;
 
 class Classifier
@@ -44,11 +47,25 @@ class Classifier
         if (SafariChrome::challenge($ua, $result)) {
             return true;
         }
+
+        if (Firefox::challenge($ua, $result)) {
+            return true;
+        }
+
+        if (Opera::challenge($ua, $result)) {
+            return true;
+        }
+
+        return false;
     }
 
     public function tryOs($ua, &$result)
     {
         if (Windows::challenge($ua, $result)) {
+            return true;
+        }
+
+        if (Osx::challenge($ua, $result)) {
             return true;
         }
     }

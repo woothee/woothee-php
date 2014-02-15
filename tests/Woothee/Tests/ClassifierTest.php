@@ -78,7 +78,20 @@ class ClassifierTest extends \PHPUnit_Framework_TestCase
         return $this->loadTestSetYaml(
             'crawler.yaml',
             'crawler_google.yaml',
-            'pc_windows.yaml'
+            'pc_windows.yaml',
+            'pc_misc.yaml',
+            'mobilephone_docomo.yaml',
+            'mobilephone_au.yaml',
+            'mobilephone_softbank.yaml',
+            'mobilephone_willcom.yaml',
+            'mobilephone_misc.yaml',
+            'smartphone_ios.yaml',
+            'smartphone_android.yaml',
+            'smartphone_misc.yaml',
+            'appliance.yaml',
+            'pc_lowpriority.yaml',
+            'misc.yaml',
+            'crawler_nonmajor.yaml'
         );
     }
 
