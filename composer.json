@@ -12,5 +12,8 @@
             "name": "Yuya Takeyama",
             "email": "sign.of.the.wolf.pentagram@gmail.com"
         }
-    ]
+    ],
+    "autoload": {
+        "psr-0": { "Woothee": "src/" }
+    }
 }
