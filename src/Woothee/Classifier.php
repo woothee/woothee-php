@@ -9,6 +9,7 @@ use Woothee\AgentCategory\Crawler\Crawlers;
 use Woothee\AgentCategory\Crawler\Google;
 use Woothee\AgentCategory\Os\Linux;
 use Woothee\AgentCategory\Os\Osx;
+use Woothee\AgentCategory\Os\SmartPhone;
 use Woothee\AgentCategory\Os\Windows;
 
 class Classifier
@@ -71,6 +72,10 @@ class Classifier
         }
 
         if (Linux::challenge($ua, $result)) {
+            return true;
+        }
+
+        if (SmartPhone::challenge($ua, $result)) {
             return true;
         }
     }
