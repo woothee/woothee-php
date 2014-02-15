@@ -54,6 +54,32 @@ class ClassifierTest extends \PHPUnit_Framework_TestCase
         );
     }
 
+    /**
+     * @test
+     * @dataProvider provideAllTestSet
+     */
+    public function testParse($param)
+    {
+        $expected = $param;
+        unset($expected['target']);
+
+        $result = $this->classifier->parse($param['target']);
+
+        $this->assertSame($expected['name'], $result['name']);
+        $this->assertSame($expected['category'], $result['category']);
+
+        if (isset($expected['os'])) {
+            $this->assertSame($expected['os'], $result['os']);
+        }
+    }
+
+    public function provideAllTestSet()
+    {
+        return $this->loadTestSetYaml(
+            'crawler.yaml'
+        );
+    }
+
     private function loadTestSetYaml($file)
     {
         $files = func_get_args();
