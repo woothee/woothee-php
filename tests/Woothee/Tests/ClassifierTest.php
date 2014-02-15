@@ -39,13 +39,40 @@ class ClassifierTest extends \PHPUnit_Framework_TestCase
         return $this->loadTestSetYaml('crawler_google.yaml');
     }
 
+    /**
+     * @test
+     * @dataProvider provideNonCrawlerTestSet
+     */
+    public function testNonCrawler($param)
+    {
+        $this->assertFalse($this->classifier->isCrawler($param['target']));
+    }
+
+    public function provideNonCrawlerTestSet()
+    {
+        return $this->loadTestSetYaml('pc_windows.yaml', 'pc_misc.yaml');
+    }
+
     private function loadTestSetYaml($file)
     {
-        return array_map(
-            function ($testCase) {
-                return [$testCase];
+        $files = func_get_args();
+
+        return array_reduce(
+            array_map(
+                function ($file) {
+                    return array_map(
+                        function ($testCase) {
+                            return [$testCase];
+                        },
+                        Yaml::parse(file_get_contents('woothee/testsets/'.$file))
+                    );
+                },
+                $files
+            ),
+            function ($result, $testSet) {
+                return array_merge($result, $testSet);
             },
-            Yaml::parse(file_get_contents('woothee/testsets/' . $file))
+            []
         );
     }
 }
