@@ -1,8 +1,11 @@
 <?php
 namespace Woothee;
 
+use Woothee\AgentCategory\Browser\Msie;
+use Woothee\AgentCategory\Browser\SafariChrome;
 use Woothee\AgentCategory\Crawler\Crawlers;
 use Woothee\AgentCategory\Crawler\Google;
+use Woothee\AgentCategory\Os\Windows;
 
 class Classifier
 {
@@ -30,6 +33,24 @@ class Classifier
         }
 
         return false;
+    }
+
+    public function tryBrowser($ua, &$result)
+    {
+        if (Msie::challenge($ua, $result)) {
+            return true;
+        }
+
+        if (SafariChrome::challenge($ua, $result)) {
+            return true;
+        }
+    }
+
+    public function tryOs($ua, &$result)
+    {
+        if (Windows::challenge($ua, $result)) {
+            return true;
+        }
     }
 
     public function parse($ua)
@@ -71,6 +92,12 @@ class Classifier
         }
 
         if ($this->tryCrawler($ua, $result)) {
+            return $result;
+        }
+
+        if ($this->tryBrowser($ua, $result)) {
+            $this->tryOs($ua, $result);
+
             return $result;
         }
     }

@@ -76,7 +76,9 @@ class ClassifierTest extends \PHPUnit_Framework_TestCase
     public function provideAllTestSet()
     {
         return $this->loadTestSetYaml(
-            'crawler.yaml'
+            'crawler.yaml',
+            'crawler_google.yaml',
+            'pc_windows.yaml'
         );
     }
 
