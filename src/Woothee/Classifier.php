@@ -1,6 +1,7 @@
 <?php
 namespace Woothee;
 
+use Woothee\AgentCategory\Crawler\Crawlers;
 use Woothee\AgentCategory\Crawler\Google;
 
 class Classifier
@@ -24,6 +25,10 @@ class Classifier
     {
         if (Google::challenge($ua, $result)) {
             return true;
+        } elseif (Crawlers::challenge($ua, $result)) {
+            return true;
         }
+
+        return false;
     }
 }
