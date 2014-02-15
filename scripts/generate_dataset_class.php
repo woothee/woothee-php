@@ -12,7 +12,7 @@ $dataset = join(",\n",
                  . "            'label'    => '{$element['label']}',\n"
                  . "            'name'     => '{$element['name']}',\n"
                  . "            'type'     => '{$element['type']}',\n"
-                 . (isset($element['category']) ? "            'cotegory' => '{$element['category']}',\n" : '')
+                 . (isset($element['category']) ? "            'category' => '{$element['category']}',\n" : '')
                  . (isset($element['vendor'])   ? "            'vendor'   => '{$element['vendor']}',\n" : '')
                  . "        )";
         },
