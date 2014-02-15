@@ -22,7 +22,7 @@ class ClassifierTest extends \PHPUnit_Framework_TestCase
 
     public function provideCrawlerTestSet()
     {
-        return $this->loadTestCaseYaml('crawler.yaml');
+        return $this->loadTestSetYaml('crawler.yaml');
     }
 
     /**
@@ -36,10 +36,10 @@ class ClassifierTest extends \PHPUnit_Framework_TestCase
 
     public function provideGoogleTestSet()
     {
-        return $this->loadTestCaseYaml('crawler_google.yaml');
+        return $this->loadTestSetYaml('crawler_google.yaml');
     }
 
-    private function loadTestCaseYaml($file)
+    private function loadTestSetYaml($file)
     {
         return array_map(
             function ($testCase) {
