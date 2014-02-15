@@ -22,21 +22,7 @@ class ClassifierTest extends \PHPUnit_Framework_TestCase
 
     public function provideCrawlerTestSet()
     {
-        return $this->loadTestSetYaml('crawler.yaml');
-    }
-
-    /**
-     * @test
-     * @dataProvider provideGoogleTestSet
-     */
-    public function testCrawlerGoogle($param)
-    {
-        $this->assertTrue($this->classifier->isCrawler($param['target']));
-    }
-
-    public function provideGoogleTestSet()
-    {
-        return $this->loadTestSetYaml('crawler_google.yaml');
+        return $this->loadTestSetYaml('crawler.yaml', 'crawler_google.yaml');
     }
 
     /**
