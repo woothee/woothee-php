@@ -13,6 +13,7 @@ use Woothee\AgentCategory\Crawler\Crawlers;
 use Woothee\AgentCategory\Crawler\Google;
 use Woothee\AgentCategory\Misc\DesktopTools;
 use Woothee\AgentCategory\Misc\HttpLibrary;
+use Woothee\AgentCategory\Misc\MayBeRssReader;
 use Woothee\AgentCategory\Misc\SmartPhonePatterns;
 use Woothee\AgentCategory\MobilePhone\Au;
 use Woothee\AgentCategory\MobilePhone\Docomo;
@@ -167,6 +168,10 @@ class Classifier
         }
 
         if (HttpLibrary::challenge($ua, $result)) {
+            return true;
+        }
+
+        if (MayBeRssReader::challenge($ua, $result)) {
             return true;
         }
 
