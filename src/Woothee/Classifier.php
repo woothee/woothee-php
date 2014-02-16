@@ -212,5 +212,9 @@ class Classifier
         if ($this->tryMisc($ua, $result)) {
             return $result;
         }
+
+        if ($this->tryOs($ua, $result)) {
+            return $result;
+        }
     }
 }
