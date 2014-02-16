@@ -11,6 +11,7 @@ use Woothee\AgentCategory\Browser\SafariChrome;
 use Woothee\AgentCategory\Crawler\Crawlers;
 use Woothee\AgentCategory\Crawler\Google;
 use Woothee\AgentCategory\Misc\DesktopTools;
+use Woothee\AgentCategory\Misc\SmartPhonePatterns;
 use Woothee\AgentCategory\MobilePhone\Au;
 use Woothee\AgentCategory\MobilePhone\Docomo;
 use Woothee\AgentCategory\MobilePhone\MiscPhones;
@@ -153,6 +154,15 @@ class Classifier
         return false;
     }
 
+    public function tryRareCases($ua, &$result)
+    {
+        if (SmartPhonePatterns::challenge($ua, $result)) {
+            return true;
+        }
+
+        return false;
+    }
+
     public function parse($ua)
     {
         return $this->fillResult($this->execParse($ua));
@@ -216,5 +226,11 @@ class Classifier
         if ($this->tryOs($ua, $result)) {
             return $result;
         }
+
+        if ($this->tryRareCases($ua, $result)) {
+            return $result;
+        }
+
+        return false;
     }
 }
