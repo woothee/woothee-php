@@ -8,6 +8,7 @@ use Woothee\AgentCategory\Browser\Firefox;
 use Woothee\AgentCategory\Browser\Msie;
 use Woothee\AgentCategory\Browser\Opera;
 use Woothee\AgentCategory\Browser\SafariChrome;
+use Woothee\AgentCategory\Browser\Sleipnir;
 use Woothee\AgentCategory\Crawler\Crawlers;
 use Woothee\AgentCategory\Crawler\Google;
 use Woothee\AgentCategory\Misc\DesktopTools;
@@ -157,6 +158,10 @@ class Classifier
     public function tryRareCases($ua, &$result)
     {
         if (SmartPhonePatterns::challenge($ua, $result)) {
+            return true;
+        }
+
+        if (Sleipnir::challenge($ua, $result)) {
             return true;
         }
 
