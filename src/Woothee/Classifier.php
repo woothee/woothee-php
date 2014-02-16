@@ -7,6 +7,7 @@ use Woothee\AgentCategory\Browser\Opera;
 use Woothee\AgentCategory\Browser\SafariChrome;
 use Woothee\AgentCategory\Crawler\Crawlers;
 use Woothee\AgentCategory\Crawler\Google;
+use Woothee\AgentCategory\Os\Appliance;
 use Woothee\AgentCategory\Os\Linux;
 use Woothee\AgentCategory\Os\MobilePhone;
 use Woothee\AgentCategory\Os\Osx;
@@ -81,6 +82,10 @@ class Classifier
         }
 
         if (MobilePhone::challenge($ua, $result)) {
+            return true;
+        }
+
+        if (Appliance::challenge($ua, $result)) {
             return true;
         }
     }
