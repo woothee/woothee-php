@@ -1,6 +1,7 @@
 <?php
 namespace Woothee;
 
+use Woothee\AgentCategory\Appliance\DigitalTv;
 use Woothee\AgentCategory\Appliance\Nintendo;
 use Woothee\AgentCategory\Appliance\Playstation;
 use Woothee\AgentCategory\Browser\Firefox;
@@ -134,6 +135,12 @@ class Classifier
         if (Nintendo::challenge($ua, $result)) {
             return true;
         }
+
+        if (DigitalTv::challenge($ua, $result)) {
+            return true;
+        }
+
+        return false;
     }
 
     public function parse($ua)
