@@ -12,6 +12,7 @@ use Woothee\AgentCategory\Browser\Sleipnir;
 use Woothee\AgentCategory\Crawler\Crawlers;
 use Woothee\AgentCategory\Crawler\Google;
 use Woothee\AgentCategory\Misc\DesktopTools;
+use Woothee\AgentCategory\Misc\HttpLibrary;
 use Woothee\AgentCategory\Misc\SmartPhonePatterns;
 use Woothee\AgentCategory\MobilePhone\Au;
 use Woothee\AgentCategory\MobilePhone\Docomo;
@@ -162,6 +163,10 @@ class Classifier
         }
 
         if (Sleipnir::challenge($ua, $result)) {
+            return true;
+        }
+
+        if (HttpLibrary::challenge($ua, $result)) {
             return true;
         }
 
