@@ -7,7 +7,7 @@
         "symfony/yaml": "2.4.*",
         "fabpot/php-cs-fixer": "0.4.*"
     },
-    "license": "The MIT License",
+    "license": "Apache License 2.0",
     "authors": [
         {
             "name": "Yuya Takeyama",
