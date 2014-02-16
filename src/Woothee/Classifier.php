@@ -11,6 +11,7 @@ use Woothee\AgentCategory\Browser\SafariChrome;
 use Woothee\AgentCategory\Browser\Sleipnir;
 use Woothee\AgentCategory\Crawler\Crawlers;
 use Woothee\AgentCategory\Crawler\Google;
+use Woothee\AgentCategory\Crawler\MayBeCrawler;
 use Woothee\AgentCategory\Misc\DesktopTools;
 use Woothee\AgentCategory\Misc\HttpLibrary;
 use Woothee\AgentCategory\Misc\MayBeRssReader;
@@ -172,6 +173,10 @@ class Classifier
         }
 
         if (MayBeRssReader::challenge($ua, $result)) {
+            return true;
+        }
+
+        if (MayBeCrawler::challenge($ua, $result)) {
             return true;
         }
 
