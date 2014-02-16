@@ -14,6 +14,7 @@ use Woothee\AgentCategory\MobilePhone\Softbank;
 use Woothee\AgentCategory\MobilePhone\Willcom;
 use Woothee\AgentCategory\Os\Appliance;
 use Woothee\AgentCategory\Os\Linux;
+use Woothee\AgentCategory\Os\MiscOs;
 use Woothee\AgentCategory\Os\MobilePhone;
 use Woothee\AgentCategory\Os\Osx;
 use Woothee\AgentCategory\Os\SmartPhone;
@@ -91,6 +92,10 @@ class Classifier
         }
 
         if (Appliance::challenge($ua, $result)) {
+            return true;
+        }
+
+        if (MiscOs::challenge($ua, $result)) {
             return true;
         }
     }
