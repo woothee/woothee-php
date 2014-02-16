@@ -15,7 +15,7 @@ class Osx extends AbstractCategory
         $data = DataSet::get('OSX');
 
         if (strpos($ua, 'like Mac OS X') !== false) {
-            if (strpos($ua, 'iPhone') !== false) {
+            if (strpos($ua, 'iPhone;') !== false) {
                 $data = DataSet::get('iPhone');
             } elseif (strpos($ua, 'iPad') !== false) {
                 $data = DataSet::get('iPad');
