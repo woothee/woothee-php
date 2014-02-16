@@ -55,7 +55,7 @@ class DataSet
     const ATTRIBUTE_VERSION            = 'version';
     const VALUE_UNKNOWN                = 'UNKNOWN';
 
-    public static \$CATEGORY_LIST = [
+    public static \$CATEGORY_LIST = array(
         self::DATASET_CATEGORY_PC,
         self::DATASET_CATEGORY_SMARTPHONE,
         self::DATASET_CATEGORY_MOBILEPHONE,
@@ -63,19 +63,19 @@ class DataSet
         self::DATASET_CATEGORY_APPLIANCE,
         self::DATASET_CATEGORY_MISC,
         self::VALUE_UNKNOWN,
-    ];
+    );
 
-    public static \$ATTRIBUTE_LIST = [
+    public static \$ATTRIBUTE_LIST = array(
         self::ATTRIBUTE_NAME,
         self::ATTRIBUTE_CATEGORY,
         self::ATTRIBUTE_OS,
         self::ATTRIBUTE_VENDOR,
         self::ATTRIBUTE_VERSION,
-    ];
+    );
 
-    private static \$dataset = [
+    private static \$dataset = array(
 {$dataset}
-    ];
+    );
 
     public static function get(\$label)
     {

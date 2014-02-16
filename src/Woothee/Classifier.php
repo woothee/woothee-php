@@ -37,7 +37,7 @@ class Classifier
             return false;
         }
 
-        $result = [];
+        $result = array();
 
         if ($this->tryCrawler($ua, $result)) {
             return true;
@@ -217,7 +217,7 @@ class Classifier
 
     public function execParse($ua)
     {
-        $result = [];
+        $result = array();
 
         if (is_null($ua) || strlen($ua) < 1 || $ua === '-') {
             return $result;
