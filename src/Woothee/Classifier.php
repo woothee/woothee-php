@@ -1,6 +1,7 @@
 <?php
 namespace Woothee;
 
+use Woothee\AgentCategory\Appliance\Nintendo;
 use Woothee\AgentCategory\Appliance\Playstation;
 use Woothee\AgentCategory\Browser\Firefox;
 use Woothee\AgentCategory\Browser\Msie;
@@ -127,6 +128,10 @@ class Classifier
     public function tryAppliance($ua, &$result)
     {
         if (Playstation::challenge($ua, $result)) {
+            return true;
+        }
+
+        if (Nintendo::challenge($ua, $result)) {
             return true;
         }
     }
