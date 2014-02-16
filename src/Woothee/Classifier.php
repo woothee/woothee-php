@@ -107,6 +107,8 @@ class Classifier
         if (MiscOs::challenge($ua, $result)) {
             return true;
         }
+
+        return false;
     }
 
     public function tryMobilePhone($ua, &$result)
