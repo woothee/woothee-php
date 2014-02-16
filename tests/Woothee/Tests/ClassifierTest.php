@@ -118,7 +118,7 @@ class ClassifierTest extends \PHPUnit_Framework_TestCase
             function ($result, $testSet) {
                 return array_merge($result, $testSet);
             },
-            []
+            array()
         );
     }
 }
