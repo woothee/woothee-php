@@ -1,0 +1,6 @@
+*.swp
+/.bundle/
+/Gemfile.lock
+/build/
+/composer.lock
+/vendor/
