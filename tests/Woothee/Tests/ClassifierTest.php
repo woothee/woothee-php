@@ -71,6 +71,10 @@ class ClassifierTest extends \PHPUnit_Framework_TestCase
         if (isset($expected['os'])) {
             $this->assertSame($expected['os'], $result['os']);
         }
+
+        if (isset($expected['version'])) {
+            $this->assertSame($expected['version'], $result['version']);
+        }
     }
 
     public function provideAllTestSet()

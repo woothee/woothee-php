@@ -21,7 +21,7 @@ class Docomo extends AbstractCategory
 
         $version = DataSet::VALUE_UNKNOWN;
 
-        if (preg_match('/DoCoMo\/[.0-9]+[ \/]([^- \/;\(\)"\'\]+)\'])/Du', $ua, $matches) === 1) {
+        if (preg_match('/DoCoMo\/[.0-9]+[ \/]([^- \/;\(\)"\'\]+)\']+)/Du', $ua, $matches) === 1) {
             $version = $matches[1];
         } else {
             if (preg_match('/\(([^;\)]+);FOMA;/Du', $ua, $matches)) {
