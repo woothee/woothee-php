@@ -31,6 +31,7 @@ class MiscPhones extends AbstractCategory
 
           static::updateMap($result, $data);
           static::updateVersion($result, 'Hatena');
+
           return true;
         } elseif (strpos($ua, 'livedoor-Mobile-Gateway/') !== false) {
             $data = DataSet::get('MobileTranscoder');

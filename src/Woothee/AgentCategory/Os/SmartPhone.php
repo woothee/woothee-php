@@ -30,7 +30,7 @@ class SmartPhone extends AbstractCategory
                 $data = DataSet::get('FirefoxOS');
             }
         }
-    
+
         if (is_null($data)) {
             return false;
         }

@@ -14,7 +14,7 @@ class Playstation extends AbstractCategory
             $data = DataSet::get('PSP');
         } elseif (strpos($ua, 'PlayStation Vita') !== false) {
             $data = DataSet::get('PSVita');
-        } else if (strpos($ua, 'PLAYSTATION 3 ') !== false
+        } elseif (strpos($ua, 'PLAYSTATION 3 ') !== false
             || strpos($ua, 'PLAYSTATION 3;') !== false) {
             $data = DataSet::get('PS3');
         } elseif (strpos($ua, 'PlayStation 4 ') !== false) {

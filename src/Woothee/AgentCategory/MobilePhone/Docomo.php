@@ -15,6 +15,7 @@ class Docomo extends AbstractCategory
         }
 
         if ($pos === false) { // not DoCoMo
+
             return false;
         }
 
