@@ -10,6 +10,7 @@ use Woothee\AgentCategory\Crawler\Google;
 use Woothee\AgentCategory\MobilePhone\Au;
 use Woothee\AgentCategory\MobilePhone\Docomo;
 use Woothee\AgentCategory\MobilePhone\Softbank;
+use Woothee\AgentCategory\MobilePhone\Willcom;
 use Woothee\AgentCategory\Os\Appliance;
 use Woothee\AgentCategory\Os\Linux;
 use Woothee\AgentCategory\Os\MobilePhone;
@@ -104,6 +105,10 @@ class Classifier
         }
 
         if (Softbank::challenge($ua, $result)) {
+            return true;
+        }
+
+        if (Willcom::challenge($ua, $result)) {
             return true;
         }
     }

@@ -3,6 +3,7 @@ namespace Woothee\AgentCategory\Os;
 
 use Woothee\AgentCategory\AbstractCategory;
 use Woothee\AgentCategory\MobilePhone\Au;
+use Woothee\AgentCategory\MobilePhone\Willcom;
 use Woothee\DataSet;
 
 class MobilePhone extends AbstractCategory
@@ -23,7 +24,7 @@ class MobilePhone extends AbstractCategory
         }
 
         if (strpos($ua, 'WILLCOM') !== false || strpos($ua, 'DDIPOCKET') !== false) {
-            if (preg_match('/(?:WILLCOM|DDIPOCKET);[^\/]+\/([^ \/;\\(\\)]+)/Du', $ua, $matches) === 1) {
+            if (preg_match(Willcom::VERSION_PATTERN, $ua, $matches) === 1) {
                 $term = $matches[1];
                 $data = DataSet::get('willcom');
 
