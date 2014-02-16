@@ -7,6 +7,7 @@ use Woothee\AgentCategory\Browser\Opera;
 use Woothee\AgentCategory\Browser\SafariChrome;
 use Woothee\AgentCategory\Crawler\Crawlers;
 use Woothee\AgentCategory\Crawler\Google;
+use Woothee\AgentCategory\MobilePhone\Docomo;
 use Woothee\AgentCategory\Os\Appliance;
 use Woothee\AgentCategory\Os\Linux;
 use Woothee\AgentCategory\Os\MobilePhone;
@@ -90,6 +91,13 @@ class Classifier
         }
     }
 
+    public function tryMobilePhone($ua, &$result)
+    {
+        if (Docomo::challenge($ua, $result)) {
+            return true;
+        }
+    }
+
     public function parse($ua)
     {
         return $this->fillResult($this->execParse($ua));
@@ -135,6 +143,10 @@ class Classifier
         if ($this->tryBrowser($ua, $result)) {
             $this->tryOs($ua, $result);
 
+            return $result;
+        }
+
+        if ($this->tryMobilePhone($ua, $result)) {
             return $result;
         }
     }
