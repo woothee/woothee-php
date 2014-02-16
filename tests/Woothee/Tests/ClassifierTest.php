@@ -108,7 +108,7 @@ class ClassifierTest extends \PHPUnit_Framework_TestCase
                 function ($file) {
                     return array_map(
                         function ($testCase) {
-                            return [$testCase];
+                            return array($testCase);
                         },
                         Yaml::parse(file_get_contents('woothee/testsets/'.$file))
                     );
