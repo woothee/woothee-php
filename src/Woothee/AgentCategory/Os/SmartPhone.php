@@ -12,15 +12,15 @@ class SmartPhone extends AbstractCategory
 
         if (strpos($ua, 'iPhone') !== false) {
             $data = DataSet::get('iPhone');
-        } elseif (strpos($ua, 'iPad')) {
+        } elseif (strpos($ua, 'iPad') !== false) {
             $data = DataSet::get('iPad');
-        } elseif (strpos($ua, 'iPod')) {
+        } elseif (strpos($ua, 'iPod') !== false) {
             $data = DataSet::get('iPod');
-        } elseif (strpos($ua, 'Android')) {
+        } elseif (strpos($ua, 'Android') !== false) {
             $data = DataSet::get('Android');
-        } elseif (strpos($ua, 'CFNetwork')) {
+        } elseif (strpos($ua, 'CFNetwork') !== false) {
             $data = DataSet::get('iOS');
-        } elseif (strpos($ua, 'BlackBerry')) {
+        } elseif (strpos($ua, 'BlackBerry') !== false) {
             $data = DataSet::get('BlackBerry');
         }
 
