@@ -9,6 +9,7 @@ use Woothee\AgentCategory\Crawler\Crawlers;
 use Woothee\AgentCategory\Crawler\Google;
 use Woothee\AgentCategory\MobilePhone\Au;
 use Woothee\AgentCategory\MobilePhone\Docomo;
+use Woothee\AgentCategory\MobilePhone\MiscPhones;
 use Woothee\AgentCategory\MobilePhone\Softbank;
 use Woothee\AgentCategory\MobilePhone\Willcom;
 use Woothee\AgentCategory\Os\Appliance;
@@ -109,6 +110,10 @@ class Classifier
         }
 
         if (Willcom::challenge($ua, $result)) {
+            return true;
+        }
+
+        if (MiscPhones::challenge($ua, $result)) {
             return true;
         }
     }
