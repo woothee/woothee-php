@@ -8,12 +8,12 @@ class Msie extends AbstractCategory
 {
     public static function challenge($ua, &$result)
     {
-        if (strpos($ua, 'compatible; MSIE') !== false || strpos($ua, 'Triden/') !== false) {
+        if (strpos($ua, 'compatible; MSIE') !== false || strpos($ua, 'Trident/') !== false) {
             $version = DataSet::VALUE_UNKNOWN;
 
             if (preg_match('/MSIE ([.0-9]+);/', $ua, $matches) === 1) {
                 $version = $matches[1];
-            } elseif (preg_match('/Trident/([.0-9]+); rv:([.0-9]+)/', $ua, $matches) !== false) {
+            } elseif (preg_match('/Trident\/([.0-9]+); rv:([.0-9]+)/', $ua, $matches) !== false) {
                 $version = $matches[2];
             }
 
