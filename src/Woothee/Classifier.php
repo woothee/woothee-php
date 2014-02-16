@@ -1,6 +1,7 @@
 <?php
 namespace Woothee;
 
+use Woothee\AgentCategory\Appliance\Playstation;
 use Woothee\AgentCategory\Browser\Firefox;
 use Woothee\AgentCategory\Browser\Msie;
 use Woothee\AgentCategory\Browser\Opera;
@@ -123,6 +124,13 @@ class Classifier
         }
     }
 
+    public function tryAppliance($ua, &$result)
+    {
+        if (Playstation::challenge($ua, $result)) {
+            return true;
+        }
+    }
+
     public function parse($ua)
     {
         return $this->fillResult($this->execParse($ua));
@@ -172,6 +180,10 @@ class Classifier
         }
 
         if ($this->tryMobilePhone($ua, $result)) {
+            return $result;
+        }
+
+        if ($this->tryAppliance($ua, $result)) {
             return $result;
         }
     }
