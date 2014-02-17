@@ -1,19 +1,23 @@
 {
     "name": "woothee/woothee",
     "description": "Cross-language UserAgent classifier library, PHP implementation",
-    "require-dev": {
-        "phpunit/phpunit": "3.7.*",
-        "satooshi/php-coveralls": "dev-master",
-        "symfony/yaml": "2.4.*",
-        "fabpot/php-cs-fixer": "0.4.*"
-    },
-    "license": "Apache License 2.0",
+    "keywords": ["user agent", "useragent"],
+    "license": "Apache-2.0",
     "authors": [
         {
             "name": "Yuya Takeyama",
             "email": "sign.of.the.wolf.pentagram@gmail.com"
         }
     ],
+    "require": {
+        "php": ">= 5.3.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*",
+        "satooshi/php-coveralls": "dev-master",
+        "symfony/yaml": "2.4.*",
+        "fabpot/php-cs-fixer": "0.4.*"
+    },
     "autoload": {
         "psr-0": { "Woothee": "src/" }
     }
