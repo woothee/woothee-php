@@ -20,7 +20,7 @@ class Sleipnir extends AbstractCategory
 
         static::updateMap($result, DataSet::get('Sleipnir'));
         static::updateVersion($result, $version);
-        
+
         $win = DataSet::get('Win');
 
         static::updateCategory($result, $win[DataSet::DATASET_KEY_CATEGORY]);

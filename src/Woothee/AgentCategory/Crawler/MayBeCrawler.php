@@ -24,7 +24,7 @@ class MayBeCrawler extends AbstractCategory
 
             return true;
         }
-            
+
         if (preg_match('/(feed|web) ?parser/Dui', $ua, $matches) === 1) {
             static::updateMap($result, DataSet::get('VariousCrawler'));
 
