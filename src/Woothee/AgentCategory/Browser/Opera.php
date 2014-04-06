@@ -8,6 +8,7 @@ class Opera extends AbstractCategory
 {
     public static function challenge($ua, &$result)
     {
+        // See \Woothee\AgentCategory\Browser\SafariChrome for new Opera (w/ blink)
         if (strpos($ua, 'Opera') === false) {
             return false;
         }
