@@ -24,6 +24,21 @@ class SafariChrome extends AbstractCategory
             $cpos = strpos($ua, 'CriOS');
         }
 
+        if ($cpos !== false) {
+            $opos = strpos($ua, 'OPR');
+
+            if ($opos !== false) {
+                if (preg_match('/OPR\/([.0-9]+)/', $ua, $matches)) {
+                    $version = $matches[1];
+
+                    static::updateMap($result, DataSet::get('Opera'));
+                    static::updateVersion($result, $version);
+
+                    return true;
+                }
+            }
+        }
+
         if (strpos($ua, 'Chrome') !== false
             || strpos($ua, 'CrMo') !== false
             || strpos($ua, 'CriOS') !== false) {
