@@ -1,7 +1,7 @@
 <?php
 namespace Woothee;
 
-// GENERATED from dataset.yml at Sun Feb 16 15:43:40 JST 2014 by yuya
+// GENERATED from dataset.yml at Fri Apr 25 13:36:20 JST 2014 by tagomoris
 class DataSet
 {
     const DATASET_KEY_LABEL            = 'label';
@@ -184,6 +184,12 @@ class DataSet
         'BSD' => array(
             'label'    => 'BSD',
             'name'     => 'BSD',
+            'type'     => 'os',
+            'category' => 'pc',
+        ),
+        'ChromeOS' => array(
+            'label'    => 'ChromeOS',
+            'name'     => 'ChromeOS',
             'type'     => 'os',
             'category' => 'pc',
         ),

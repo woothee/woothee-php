@@ -16,6 +16,8 @@ class MiscOs extends AbstractCategory
           $data = DataSet::get('MacOS');
         } elseif (strpos($ua, 'X11; FreeBSD ') > -1) {
           $data = DataSet::get('BSD');
+        } elseif (strpos($ua, 'X11; CrOS ') > -1) {
+          $data = DataSet::get('ChromeOS');
         }
 
         if ($data) {

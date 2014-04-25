@@ -26,7 +26,7 @@ class SmartPhone extends AbstractCategory
 
         if (isset($result[DataSet::DATASET_KEY_NAME])
             && $result[DataSet::DATASET_KEY_NAME] === 'Firefox') {
-            if (preg_match('/^Mozilla\/[.0-9]+ \\(Mobile;(.*;)? rv:[.0-9]+\\) Gecko\/[.0-9]+ Firefox\/[.0-9]+$/Du', $ua) === 1) {
+            if (preg_match('/^Mozilla\/[.0-9]+ \\((Mobile|Tablet);(.*;)? rv:[.0-9]+\\) Gecko\/[.0-9]+ Firefox\/[.0-9]+$/Du', $ua) === 1) {
                 $data = DataSet::get('FirefoxOS');
             }
         }
