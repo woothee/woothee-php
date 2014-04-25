@@ -31,7 +31,7 @@ use Woothee\AgentCategory\Os\Windows;
 
 class Classifier
 {
-    const VERSION = '0.4.0';
+    const VERSION = '0.4.1';
 
     public function isCrawler($ua)
     {
