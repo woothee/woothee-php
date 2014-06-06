@@ -29,7 +29,7 @@ class Windows extends AbstractCategory
 
         if (preg_match('/Windows ([ .a-zA-Z0-9]+)[;\\)]/', $ua, $matches) === 0) {
             static::updateCategory($result, $data[DataSet::DATASET_KEY_CATEGORY]);
-            static::updateOs($result, $data[DataSet::DATA_KEY_NAME]);
+            static::updateOs($result, $data[DataSet::DATASET_KEY_NAME]);
 
             return true;
         }

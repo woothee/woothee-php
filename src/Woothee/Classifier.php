@@ -134,6 +134,8 @@ class Classifier
         if (MiscPhones::challenge($ua, $result)) {
             return true;
         }
+
+        return false;
     }
 
     public function tryAppliance($ua, &$result)
