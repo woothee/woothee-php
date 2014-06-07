@@ -99,6 +99,13 @@ class ClassifierTest extends \PHPUnit_Framework_TestCase
         );
     }
 
+    public function testNonMobilePhone()
+    {
+        $ua = 'non mobile phone';
+        $result = array();
+        $this->assertFalse($this->classifier->tryMobilePhone($ua, $result));
+    }
+
     private function loadTestSetYaml($file)
     {
         $files = func_get_args();
