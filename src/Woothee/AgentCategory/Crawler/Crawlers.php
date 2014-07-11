@@ -20,6 +20,10 @@ class Crawlers extends AbstractCategory
                 static::updateMap($result, DataSet::get('YahooJP'));
 
                 return true;
+            } elseif (strpos($ua, 'Y!J-BRZ/YATSHA crawler') !== false || strpos($ua, 'Y!J-BRY/YATSH crawler')) {
+                static::updateMap($result, DataSet::get('YahooJP'));
+
+                return true;
             } elseif (strpos($ua, 'crawler (http://listing.yahoo.co.jp/support/faq/') !== false
                 || strpos($ua, 'crawler (http://help.yahoo.co.jp/help/jp/') !== false) {
                 static::updateMap($result, DataSet::get('YahooJP'));
