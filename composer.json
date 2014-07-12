@@ -19,6 +19,6 @@
         "fabpot/php-cs-fixer": "0.4.*"
     },
     "autoload": {
-        "psr-4": { "Woothee\\": "src/Woothee/" }
+        "psr-4": { "Woothee\\": "src/" }
     }
 }
