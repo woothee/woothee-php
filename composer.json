@@ -13,12 +13,12 @@
         "php": ">= 5.3.3"
     },
     "require-dev": {
-        "phpunit/phpunit": "3.7.*",
+        "phpunit/phpunit": "4.1.*",
         "satooshi/php-coveralls": "dev-master",
         "symfony/yaml": "2.4.*",
         "fabpot/php-cs-fixer": "0.4.*"
     },
     "autoload": {
-        "psr-4": { "Woothee\\": "src/Woothee/" }
+        "psr-4": { "Woothee\\": "src/" }
     }
 }
