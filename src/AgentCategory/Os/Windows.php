@@ -62,6 +62,7 @@ class Windows extends AbstractCategory
 
         static::updateCategory($result, $data[DataSet::DATASET_KEY_CATEGORY]);
         static::updateOs($result, $data[DataSet::DATASET_KEY_NAME]);
+        static::updateOsVersion($result, $version);
 
         return true;
     }
