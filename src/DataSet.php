@@ -1,7 +1,7 @@
 <?php
 namespace Woothee;
 
-// GENERATED from dataset.yml at Fri Apr 25 13:36:20 JST 2014 by tagomoris
+// GENERATED from dataset.yml at Sun Oct 26 00:45:06 JST 2014 by okonomi
 class DataSet
 {
     const DATASET_KEY_LABEL            = 'label';
@@ -9,6 +9,7 @@ class DataSet
     const DATASET_KEY_TYPE             = 'type';
     const DATASET_KEY_CATEGORY         = 'category';
     const DATASET_KEY_OS               = 'os';
+    const DATASET_KEY_OS_VERSION       = 'os_version';
     const DATASET_KEY_VENDOR           = 'vendor';
     const DATASET_KEY_VERSION          = 'version';
 
@@ -26,6 +27,7 @@ class DataSet
     const ATTRIBUTE_NAME               = 'name';
     const ATTRIBUTE_CATEGORY           = 'category';
     const ATTRIBUTE_OS                 = 'os';
+    const ATTRIBUTE_OS_VERSION         = 'os_version';
     const ATTRIBUTE_VENDOR             = 'vendor';
     const ATTRIBUTE_VERSION            = 'version';
     const VALUE_UNKNOWN                = 'UNKNOWN';
@@ -44,6 +46,7 @@ class DataSet
         self::ATTRIBUTE_NAME,
         self::ATTRIBUTE_CATEGORY,
         self::ATTRIBUTE_OS,
+        self::ATTRIBUTE_OS_VERSION,
         self::ATTRIBUTE_VENDOR,
         self::ATTRIBUTE_VERSION,
     );
