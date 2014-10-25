@@ -197,7 +197,7 @@ class Classifier
     private function fillResult($result)
     {
         if (isset($result[DataSet::ATTRIBUTE_NAME]) === false) {
-          $result[DataSet::ATTRIBUTE_NAME] = DataSet::VALUE_UNKNOWN;
+            $result[DataSet::ATTRIBUTE_NAME] = DataSet::VALUE_UNKNOWN;
         }
 
         if (isset($result[DataSet::ATTRIBUTE_CATEGORY]) === false) {
