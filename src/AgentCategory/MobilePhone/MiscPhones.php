@@ -29,10 +29,10 @@ class MiscPhones extends AbstractCategory
         } elseif (strpos($ua, 'Hatena-Mobile-Gateway/') !== false) {
             $data = DataSet::get('MobileTranscoder');
 
-          static::updateMap($result, $data);
-          static::updateVersion($result, 'Hatena');
+            static::updateMap($result, $data);
+            static::updateVersion($result, 'Hatena');
 
-          return true;
+            return true;
         } elseif (strpos($ua, 'livedoor-Mobile-Gateway/') !== false) {
             $data = DataSet::get('MobileTranscoder');
 
