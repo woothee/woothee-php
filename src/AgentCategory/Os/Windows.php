@@ -46,8 +46,11 @@ class Windows extends AbstractCategory
             $data = DataSet::get('WinVista');
         } elseif ($version === 'NT 5.1') {
             $data = DataSet::get('WinXP');
-        } elseif (strpos($version, 'Phone OS') === 0) {
+        } elseif (strpos($version, 'Phone') === 0) {
             $data = DataSet::get('WinPhone');
+            if (preg_match('/Phone(?: OS)? ([.0-9]+)/', $ua, $matches) === 1) {
+                $version = $matches[1];
+            }
         } elseif ($version === 'NT 5.0') {
             $data = DataSet::get('Win2000');
         } elseif ($version === 'NT 4.0') {

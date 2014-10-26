@@ -9,6 +9,7 @@ class SmartPhone extends AbstractCategory
     public static function challenge($ua, &$result)
     {
         $data = null;
+        $version = null;
 
         if (strpos($ua, 'iPhone') !== false) {
             $data = DataSet::get('iPhone');
@@ -22,12 +23,16 @@ class SmartPhone extends AbstractCategory
             $data = DataSet::get('iOS');
         } elseif (strpos($ua, 'BlackBerry') !== false) {
             $data = DataSet::get('BlackBerry');
+            if (preg_match('/BlackBerry(?:\\d+)\/([.0-9]+) /', $ua, $matches) === 1) {
+                $version = $matches[1];
+            }
         }
 
         if (isset($result[DataSet::DATASET_KEY_NAME])
             && $result[DataSet::DATASET_KEY_NAME] === 'Firefox') {
-            if (preg_match('/^Mozilla\/[.0-9]+ \\((Mobile|Tablet);(.*;)? rv:[.0-9]+\\) Gecko\/[.0-9]+ Firefox\/[.0-9]+$/Du', $ua) === 1) {
+            if (preg_match('/^Mozilla\/[.0-9]+ \\((?:Mobile|Tablet);(?:.*;)? rv:([.0-9]+)\\) Gecko\/[.0-9]+ Firefox\/[.0-9]+$/', $ua, $matches) === 1) {
                 $data = DataSet::get('FirefoxOS');
+                $version = $matches[1];
             }
         }
 
@@ -37,6 +42,9 @@ class SmartPhone extends AbstractCategory
 
         static::updateCategory($result, $data[DataSet::DATASET_KEY_CATEGORY]);
         static::updateOs($result, $data[DataSet::DATASET_KEY_NAME]);
+        if ($version) {
+            static::updateOsVersion($result, $version);
+        }
 
         return true;
     }
