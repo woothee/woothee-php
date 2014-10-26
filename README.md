@@ -11,7 +11,23 @@ This project is almost ported from [`woothee-java`](https://github.com/woothee/w
 
 ## Installation
 
-TODO: describe installation
+Install this library using [Composer](https://getcomposer.org/).
+
+Run below command in your project directory.
+
+```
+$ composer require 'woothee/woothee:*'
+```
+
+Or add this library in your `composer.json`'s `require` section manually.
+
+```json
+{
+  "require": {
+    "woothee/woothee": "*"
+  }
+}
+```
 
 ## Usage
 
@@ -52,6 +68,9 @@ $classifier->isCrawler($str); // boolean
 
 ## Authors
 
+* k-holy
+* okonomi
+* TAGOMORI Satoshi
 * Yuya Takeyama <sign.of.the.wolf.pentagram@gmail.com>
 
 ## License
