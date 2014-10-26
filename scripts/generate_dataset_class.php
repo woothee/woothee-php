@@ -22,7 +22,7 @@ $dataset = join(",\n",
 );
 
 file_put_contents(
-    __DIR__ . '/../src/Woothee/DataSet.php', <<<__SCRIPT__
+    __DIR__ . '/../src/DataSet.php', <<<__SCRIPT__
 <?php
 namespace Woothee;
 
@@ -34,6 +34,7 @@ class DataSet
     const DATASET_KEY_TYPE             = 'type';
     const DATASET_KEY_CATEGORY         = 'category';
     const DATASET_KEY_OS               = 'os';
+    const DATASET_KEY_OS_VERSION       = 'os_version';
     const DATASET_KEY_VENDOR           = 'vendor';
     const DATASET_KEY_VERSION          = 'version';
 
@@ -51,6 +52,7 @@ class DataSet
     const ATTRIBUTE_NAME               = 'name';
     const ATTRIBUTE_CATEGORY           = 'category';
     const ATTRIBUTE_OS                 = 'os';
+    const ATTRIBUTE_OS_VERSION         = 'os_version';
     const ATTRIBUTE_VENDOR             = 'vendor';
     const ATTRIBUTE_VERSION            = 'version';
     const VALUE_UNKNOWN                = 'UNKNOWN';
@@ -69,6 +71,7 @@ class DataSet
         self::ATTRIBUTE_NAME,
         self::ATTRIBUTE_CATEGORY,
         self::ATTRIBUTE_OS,
+        self::ATTRIBUTE_OS_VERSION,
         self::ATTRIBUTE_VENDOR,
         self::ATTRIBUTE_VERSION,
     );

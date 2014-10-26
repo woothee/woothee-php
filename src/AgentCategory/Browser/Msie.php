@@ -8,13 +8,15 @@ class Msie extends AbstractCategory
 {
     public static function challenge($ua, &$result)
     {
-        if (strpos($ua, 'compatible; MSIE') !== false || strpos($ua, 'Trident/') !== false) {
+        if (strpos($ua, 'compatible; MSIE') !== false || strpos($ua, 'Trident/') !== false || strpos($ua, 'IEMobile') !== false) {
             $version = DataSet::VALUE_UNKNOWN;
 
             if (preg_match('/MSIE ([.0-9]+);/', $ua, $matches) === 1) {
                 $version = $matches[1];
             } elseif (preg_match('/Trident\/([.0-9]+);(?: BOIE[0-9]+;[A-Z]+;)? rv:([.0-9]+)/', $ua, $matches) === 1) {
                 $version = $matches[2];
+            } elseif (preg_match('/IEMobile\/([.0-9]+);/', $ua, $matches) === 1) {
+                $version = $matches[1];
             }
 
             static::updateMap($result, DataSet::get('MSIE'));

@@ -34,6 +34,9 @@ $r['os'];
 
 $r['version'];
 // => version of browser, or terminal type name of mobile phones
+
+$r['os_version'];
+// => version of operating systems (for some typical cases)
 ```
 
 Parse user-agent string and returns a `array` with keys `name`, `category`, `os`, `version` and `vendor`.

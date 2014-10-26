@@ -32,4 +32,9 @@ abstract class AbstractCategory
     {
         $target[DataSet::ATTRIBUTE_OS] = $os;
     }
+
+    protected static function updateOsVersion(&$target, $os_version)
+    {
+        $target[DataSet::ATTRIBUTE_OS_VERSION] = $os_version;
+    }
 }
