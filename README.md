@@ -52,6 +52,9 @@ $classifier->isCrawler($str); // boolean
 
 ## Authors
 
+* k-holy
+* okonomi
+* TAGOMORI Satoshi
 * Yuya Takeyama <sign.of.the.wolf.pentagram@gmail.com>
 
 ## License
