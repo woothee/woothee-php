@@ -13,8 +13,8 @@ class Msie extends AbstractCategory
 
             if (preg_match('/MSIE ([.0-9]+);/', $ua, $matches) === 1) {
                 $version = $matches[1];
-            } elseif (preg_match('/Trident\/([.0-9]+);(?: BOIE[0-9]+;[A-Z]+;)? rv:([.0-9]+)/', $ua, $matches) === 1) {
-                $version = $matches[2];
+            } elseif (preg_match('/Trident\/([.0-9]+);/', $ua) === 1 && preg_match('/rv:([.0-9]+)/', $ua, $matches) === 1) {
+                $version = $matches[1];
             } elseif (preg_match('/IEMobile\/([.0-9]+);/', $ua, $matches) === 1) {
                 $version = $matches[1];
             }

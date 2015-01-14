@@ -16,7 +16,7 @@ Install this library using [Composer](https://getcomposer.org/).
 Run below command in your project directory.
 
 ```
-$ composer require 'woothee/woothee:*'
+$ composer require woothee/woothee
 ```
 
 Or add this library in your `composer.json`'s `require` section manually.
