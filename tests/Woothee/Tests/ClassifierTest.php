@@ -110,6 +110,21 @@ class ClassifierTest extends \PHPUnit_Framework_TestCase
         $this->assertFalse($this->classifier->tryMobilePhone($ua, $result));
     }
 
+    /**
+     * @test
+     * confirm when invalid UserAgent string
+     */
+    public function testNeverExistingParseResult()
+    {
+        $ua = 'never%existing$user&agent';
+        $result = $this->classifier->parse($ua);
+
+        $resultKeys = \Woothee\Dataset::$ATTRIBUTE_LIST;
+        foreach ($resultKeys as $key) {
+            $this->assertSame(\Woothee\Dataset::VALUE_UNKNOWN, $result[$key]);
+        }
+    }
+
     private function loadTestSetYaml($file)
     {
         $files = func_get_args();
