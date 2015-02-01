@@ -15,7 +15,6 @@ use Woothee\AgentCategory\Crawler\MayBeCrawler;
 use Woothee\AgentCategory\Misc\DesktopTools;
 use Woothee\AgentCategory\Misc\HttpLibrary;
 use Woothee\AgentCategory\Misc\MayBeRssReader;
-use Woothee\AgentCategory\Misc\SmartPhonePatterns;
 use Woothee\AgentCategory\MobilePhone\Au;
 use Woothee\AgentCategory\MobilePhone\Docomo;
 use Woothee\AgentCategory\MobilePhone\MiscPhones;
@@ -166,10 +165,6 @@ class Classifier
 
     public function tryRareCases($ua, &$result)
     {
-        if (SmartPhonePatterns::challenge($ua, $result)) {
-            return true;
-        }
-
         if (Sleipnir::challenge($ua, $result)) {
             return true;
         }
