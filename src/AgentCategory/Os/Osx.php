@@ -16,17 +16,7 @@ class Osx extends AbstractCategory
         $version = null;
 
         if (strpos($ua, 'like Mac OS X') !== false) {
-            if (strpos($ua, 'iPhone;') !== false) {
-                $data = DataSet::get('iPhone');
-            } elseif (strpos($ua, 'iPad') !== false) {
-                $data = DataSet::get('iPad');
-            } elseif (strpos($ua, 'iPod') !== false) {
-                $data = DataSet::get('iPod');
-            }
-
-            if (preg_match('/; CPU(?: iPhone)? OS (\\d+_\\d+(?:_\\d+)?) like Mac OS X/', $ua, $matches) === 1) {
-                $version = str_replace('_', '.', $matches[1]);
-            }
+            return false;
         } else {
             if (preg_match('/Mac OS X (10[._]\\d+(?:[._]\\d+)?)(?:\\)|;)/', $ua, $matches) === 1) {
                 $version = str_replace('_', '.', $matches[1]);

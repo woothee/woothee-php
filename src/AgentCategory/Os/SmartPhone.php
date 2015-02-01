@@ -11,12 +11,15 @@ class SmartPhone extends AbstractCategory
         $data = null;
         $version = null;
 
-        if (strpos($ua, 'iPhone') !== false) {
-            $data = DataSet::get('iPhone');
+        if (strpos($ua, 'iPod') !== false) {
+            $data = DataSet::get('iPod');
+            $version = static::parseIosVersion($ua);
         } elseif (strpos($ua, 'iPad') !== false) {
             $data = DataSet::get('iPad');
-        } elseif (strpos($ua, 'iPod') !== false) {
-            $data = DataSet::get('iPod');
+            $version = static::parseIosVersion($ua);
+        } elseif (strpos($ua, 'iPhone') !== false) {
+            $data = DataSet::get('iPhone');
+            $version = static::parseIosVersion($ua);
         } elseif (strpos($ua, 'Android') !== false) {
             $data = DataSet::get('Android');
         } elseif (strpos($ua, 'CFNetwork') !== false) {
@@ -47,5 +50,12 @@ class SmartPhone extends AbstractCategory
         }
 
         return true;
+    }
+
+    private static function parseIosVersion($ua)
+    {
+        if (preg_match('/; CPU(?: iPhone)? OS (\\d+_\\d+(?:_\\d+)?) like Mac OS X/', $ua, $matches) === 1) {
+            return str_replace('_', '.', $matches[1]);
+        }
     }
 }
