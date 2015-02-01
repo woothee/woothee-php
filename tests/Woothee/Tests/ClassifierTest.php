@@ -50,7 +50,8 @@ class ClassifierTest extends \PHPUnit_Framework_TestCase
             'appliance.yaml',
             'pc_lowpriority.yaml',
             'misc.yaml',
-            'crawler_nonmajor.yaml'
+            'crawler_nonmajor.yaml',
+            'blank.yaml'
         );
     }
 
@@ -99,7 +100,8 @@ class ClassifierTest extends \PHPUnit_Framework_TestCase
             'appliance.yaml',
             'pc_lowpriority.yaml',
             'misc.yaml',
-            'crawler_nonmajor.yaml'
+            'crawler_nonmajor.yaml',
+            'blank.yaml'
         );
     }
 
