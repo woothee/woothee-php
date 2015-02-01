@@ -216,6 +216,10 @@ class Classifier
             $result[DataSet::ATTRIBUTE_VENDOR] = DataSet::VALUE_UNKNOWN;
         }
 
+        if (isset($result[DataSet::ATTRIBUTE_OS_VERSION]) === false) {
+            $result[DataSet::ATTRIBUTE_OS_VERSION] = DataSet::VALUE_UNKNOWN;
+        }
+
         return $result;
     }
 
