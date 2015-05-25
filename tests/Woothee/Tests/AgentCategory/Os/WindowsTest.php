@@ -1,4 +1,5 @@
 <?php
+
 namespace Woothee\Tests\AgentCategory\Os;
 
 use Woothee\AgentCategory\Os\Windows;

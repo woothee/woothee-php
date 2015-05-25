@@ -1,4 +1,5 @@
 <?php
+
 namespace Woothee\AgentCategory;
 
 use Woothee\DataSet;

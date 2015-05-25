@@ -1,4 +1,5 @@
 <?php
+
 namespace Woothee\AgentCategory\MobilePhone;
 
 use Woothee\AgentCategory\AbstractCategory;

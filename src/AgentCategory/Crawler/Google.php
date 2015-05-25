@@ -1,4 +1,5 @@
 <?php
+
 namespace Woothee\AgentCategory\Crawler;
 
 use Woothee\AgentCategory\AbstractCategory;

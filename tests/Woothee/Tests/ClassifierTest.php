@@ -1,4 +1,5 @@
 <?php
+
 namespace Woothee\Tests;
 
 use Symfony\Component\Yaml\Yaml;
@@ -8,7 +9,7 @@ class ClassifierTest extends \PHPUnit_Framework_TestCase
 {
     public function setUp()
     {
-        $this->classifier = new Classifier;
+        $this->classifier = new Classifier();
     }
 
     /**

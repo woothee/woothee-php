@@ -1,4 +1,5 @@
 <?php
+
 namespace Woothee\AgentCategory\Os;
 
 use Woothee\AgentCategory\AbstractCategory;

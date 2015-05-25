@@ -1,4 +1,5 @@
 <?php
+
 namespace Woothee\AgentCategory\Crawler;
 
 use Woothee\AgentCategory\AbstractCategory;
@@ -10,7 +11,7 @@ class Crawlers extends AbstractCategory
     {
         if (strpos($ua, 'Yahoo') !== false
             || strpos($ua, 'help.yahoo.co.jp/help/jp/') !== false
-            || strpos($ua, 'listing.yahoo.co.jp/support/faq/') !== false ) {
+            || strpos($ua, 'listing.yahoo.co.jp/support/faq/') !== false) {
             if (strpos($ua, 'compatible; Yahoo! Slurp') !== false) {
                 static::updateMap($result, DataSet::get('YahooSlurp'));
 
