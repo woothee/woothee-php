@@ -1,4 +1,5 @@
 <?php
+
 namespace Woothee\AgentCategory\Os;
 
 use Woothee\AgentCategory\AbstractCategory;
@@ -8,8 +9,8 @@ class Appliance extends AbstractCategory
 {
     public static function challenge($ua, &$result)
     {
-        if (strpos($ua, "Nintendo DSi;") !== false) {
-            $data = DataSet::get("NintendoDSi");
+        if (strpos($ua, 'Nintendo DSi;') !== false) {
+            $data = DataSet::get('NintendoDSi');
 
             static::updateCategory($result, $data[DataSet::DATASET_KEY_CATEGORY]);
             static::updateOs($result, $data[DataSet::DATASET_KEY_OS]);
@@ -17,8 +18,8 @@ class Appliance extends AbstractCategory
             return true;
         }
 
-        if (strpos($ua, "Nintendo Wii;") !== false) {
-            $data = DataSet::get("NintendoWii");
+        if (strpos($ua, 'Nintendo Wii;') !== false) {
+            $data = DataSet::get('NintendoWii');
 
             static::updateCategory($result, $data[DataSet::DATASET_KEY_CATEGORY]);
             static::updateOs($result, $data[DataSet::DATASET_KEY_OS]);

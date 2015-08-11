@@ -1,4 +1,5 @@
 <?php
+
 namespace Woothee\AgentCategory\Os;
 
 use Woothee\AgentCategory\AbstractCategory;
@@ -13,7 +14,7 @@ class MiscOs extends AbstractCategory
 
         if (strpos($ua, '(Win98;') > -1) {
             $data = DataSet::get('Win98');
-            $os_version = "98";
+            $os_version = '98';
         } elseif (strpos($ua, 'Macintosh; U; PPC;') > -1 || strpos($ua, 'Mac_PowerPC') > -1) {
             $data = DataSet::get('MacOS');
             if (preg_match('/rv:(\\d+\\.\\d+\\.\\d+)/', $ua, $matches) === 1) {

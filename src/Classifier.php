@@ -1,4 +1,5 @@
 <?php
+
 namespace Woothee;
 
 use Woothee\AgentCategory\Appliance\DigitalTv;
