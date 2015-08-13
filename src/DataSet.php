@@ -1,7 +1,7 @@
 <?php
 namespace Woothee;
 
-// GENERATED from dataset.yml at Sun Oct 26 00:45:06 JST 2014 by okonomi
+// GENERATED from dataset.yml at Thu Aug 13 20:42:56 JST 2015 by yuya
 class DataSet
 {
     const DATASET_KEY_LABEL            = 'label';
@@ -58,6 +58,12 @@ class DataSet
             'type'     => 'browser',
             'vendor'   => 'Microsoft',
         ),
+        'Edge' => array(
+            'label'    => 'Edge',
+            'name'     => 'Edge',
+            'type'     => 'browser',
+            'vendor'   => 'Microsoft',
+        ),
         'Chrome' => array(
             'label'    => 'Chrome',
             'name'     => 'Chrome',
@@ -88,9 +94,21 @@ class DataSet
             'type'     => 'browser',
             'vendor'   => 'Fenrir Inc.',
         ),
+        'Webview' => array(
+            'label'    => 'Webview',
+            'name'     => 'Webview',
+            'type'     => 'browser',
+            'vendor'   => 'OS vendor',
+        ),
         'Win' => array(
             'label'    => 'Win',
             'name'     => 'Windows UNKNOWN Ver',
+            'type'     => 'os',
+            'category' => 'pc',
+        ),
+        'Win10' => array(
+            'label'    => 'Win10',
+            'name'     => 'Windows 10',
             'type'     => 'os',
             'category' => 'pc',
         ),
@@ -235,6 +253,12 @@ class DataSet
         'BlackBerry' => array(
             'label'    => 'BlackBerry',
             'name'     => 'BlackBerry',
+            'type'     => 'os',
+            'category' => 'smartphone',
+        ),
+        'BlackBerry10' => array(
+            'label'    => 'BlackBerry10',
+            'name'     => 'BlackBerry 10',
             'type'     => 'os',
             'category' => 'smartphone',
         ),
@@ -505,6 +529,12 @@ class DataSet
         'facebook' => array(
             'label'    => 'facebook',
             'name'     => 'facebook',
+            'type'     => 'full',
+            'category' => 'crawler',
+        ),
+        'twitter' => array(
+            'label'    => 'twitter',
+            'name'     => 'twitter',
             'type'     => 'full',
             'category' => 'crawler',
         ),

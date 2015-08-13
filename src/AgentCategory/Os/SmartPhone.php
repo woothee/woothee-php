@@ -25,6 +25,11 @@ class SmartPhone extends AbstractCategory
             $data = DataSet::get('Android');
         } elseif (strpos($ua, 'CFNetwork') !== false) {
             $data = DataSet::get('iOS');
+        } elseif (strpos($ua, 'BB10') !== false) {
+            $data = DataSet::get('BlackBerry10');
+            if (preg_match('#BB10(?:.+)Version/([.0-9]+)#', $ua, $matches)) {
+                $version = $matches[1];
+            }
         } elseif (strpos($ua, 'BlackBerry') !== false) {
             $data = DataSet::get('BlackBerry');
             if (preg_match('/BlackBerry(?:\\d+)\/([.0-9]+) /', $ua, $matches) === 1) {
