@@ -10,6 +10,7 @@ use Woothee\AgentCategory\Browser\Msie;
 use Woothee\AgentCategory\Browser\Opera;
 use Woothee\AgentCategory\Browser\SafariChrome;
 use Woothee\AgentCategory\Browser\Sleipnir;
+use Woothee\AgentCategory\Browser\Webview;
 use Woothee\AgentCategory\Crawler\Crawlers;
 use Woothee\AgentCategory\Crawler\Google;
 use Woothee\AgentCategory\Crawler\MayBeCrawler;
@@ -74,6 +75,10 @@ class Classifier
         }
 
         if (Opera::challenge($ua, $result)) {
+            return true;
+        }
+
+        if (Webview::challenge($ua, $result)) {
             return true;
         }
 
