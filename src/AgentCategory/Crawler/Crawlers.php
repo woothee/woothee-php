@@ -65,6 +65,10 @@ class Crawlers extends AbstractCategory
             static::updateMap($result, DataSet::get('facebook'));
 
             return true;
+        } elseif (strpos($ua, 'Twitterbot/') !== false) {
+            static::updateMap($result, DataSet::get('twitter'));
+
+            return true;
         } elseif (strpos($ua, 'ichiro') !== false) {
             if (strpos($ua, 'http://help.goo.ne.jp/door/crawler.html') !== false || strpos($ua, 'compatible; ichiro/mobile goo;') !== false) {
                 static::updateMap($result, DataSet::get('goo'));
