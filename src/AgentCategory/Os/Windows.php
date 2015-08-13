@@ -37,7 +37,9 @@ class Windows extends AbstractCategory
 
         $version = $matches[1];
 
-        if ($version === 'NT 6.3') {
+        if ($version === 'NT 10.0') {
+            $data = DataSet::get('Win10');
+        } elseif ($version === 'NT 6.3') {
             $data = DataSet::get('Win8.1');
         } elseif ($version === 'NT 6.2') {
             $data = DataSet::get('Win8');
