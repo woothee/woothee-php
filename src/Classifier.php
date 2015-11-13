@@ -34,7 +34,7 @@ class Classifier
 {
     const VERSION = '1.1.0';
 
-    public function isCrawler($ua)
+    public static function isCrawler($ua)
     {
         if (is_null($ua) || strlen($ua) < 1 || $ua === '-') {
             return false;
@@ -42,14 +42,14 @@ class Classifier
 
         $result = array();
 
-        if ($this->tryCrawler($ua, $result)) {
+        if (static::tryCrawler($ua, $result)) {
             return true;
         }
 
         return false;
     }
 
-    public function tryCrawler($ua, &$result)
+    public static function tryCrawler($ua, &$result)
     {
         if (Google::challenge($ua, $result)) {
             return true;
@@ -60,7 +60,7 @@ class Classifier
         return false;
     }
 
-    public function tryBrowser($ua, &$result)
+    public static function tryBrowser($ua, &$result)
     {
         if (Msie::challenge($ua, $result)) {
             return true;
@@ -85,7 +85,7 @@ class Classifier
         return false;
     }
 
-    public function tryOs($ua, &$result)
+    public static function tryOs($ua, &$result)
     {
         if (Windows::challenge($ua, $result)) {
             return true;
@@ -118,7 +118,7 @@ class Classifier
         return false;
     }
 
-    public function tryMobilePhone($ua, &$result)
+    public static function tryMobilePhone($ua, &$result)
     {
         if (Docomo::challenge($ua, $result)) {
             return true;
@@ -143,7 +143,7 @@ class Classifier
         return false;
     }
 
-    public function tryAppliance($ua, &$result)
+    public static function tryAppliance($ua, &$result)
     {
         if (Playstation::challenge($ua, $result)) {
             return true;
@@ -160,7 +160,7 @@ class Classifier
         return false;
     }
 
-    public function tryMisc($ua, &$result)
+    public static function tryMisc($ua, &$result)
     {
         if (DesktopTools::challenge($ua, $result)) {
             return true;
@@ -169,7 +169,7 @@ class Classifier
         return false;
     }
 
-    public function tryRareCases($ua, &$result)
+    public static function tryRareCases($ua, &$result)
     {
         if (Sleipnir::challenge($ua, $result)) {
             return true;
@@ -190,12 +190,12 @@ class Classifier
         return false;
     }
 
-    public function parse($ua)
+    public static function parse($ua)
     {
-        return $this->fillResult($this->execParse($ua));
+        return static::fillResult(static::execParse($ua));
     }
 
-    private function fillResult($result)
+    public static function fillResult($result)
     {
         if (isset($result[DataSet::ATTRIBUTE_NAME]) === false) {
             $result[DataSet::ATTRIBUTE_NAME] = DataSet::VALUE_UNKNOWN;
@@ -224,7 +224,7 @@ class Classifier
         return $result;
     }
 
-    public function execParse($ua)
+    public static function execParse($ua)
     {
         $result = array();
 
@@ -232,33 +232,33 @@ class Classifier
             return $result;
         }
 
-        if ($this->tryCrawler($ua, $result)) {
+        if (static::tryCrawler($ua, $result)) {
             return $result;
         }
 
-        if ($this->tryBrowser($ua, $result)) {
-            $this->tryOs($ua, $result);
+        if (static::tryBrowser($ua, $result)) {
+            static::tryOs($ua, $result);
 
             return $result;
         }
 
-        if ($this->tryMobilePhone($ua, $result)) {
+        if (static::tryMobilePhone($ua, $result)) {
             return $result;
         }
 
-        if ($this->tryAppliance($ua, $result)) {
+        if (static::tryAppliance($ua, $result)) {
             return $result;
         }
 
-        if ($this->tryMisc($ua, $result)) {
+        if (static::tryMisc($ua, $result)) {
             return $result;
         }
 
-        if ($this->tryOs($ua, $result)) {
+        if (static::tryOs($ua, $result)) {
             return $result;
         }
 
-        if ($this->tryRareCases($ua, $result)) {
+        if (static::tryRareCases($ua, $result)) {
             return $result;
         }
 
