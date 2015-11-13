@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/woothee/woothee-php.svg?branch=master)](https://travis-ci.org/woothee/woothee-php)
 [![Coverage Status](https://coveralls.io/repos/woothee/woothee-php/badge.png)](https://coveralls.io/r/woothee/woothee-php)
+[![Packagist](https://img.shields.io/packagist/v/woothee/woothee.svg)](https://packagist.org/packages/woothee/woothee)
 
 The PHP implementation of Project Woothee, which is multi-language user-agent strings parsers.
 
