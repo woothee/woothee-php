@@ -190,6 +190,9 @@ class Classifier
         return false;
     }
 
+    /**
+     * @deprecated
+     */
     public static function parse($ua)
     {
         return static::fillResult(static::execParse($ua));

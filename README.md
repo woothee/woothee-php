@@ -35,9 +35,7 @@ Or add this library in your `composer.json`'s `require` section manually.
 
 ```php
 <?php
-$classifier = new \Woothee\Classifier;
-
-$r = $classifier->parse('user agent string');
+$r = \Woothee::parse('user agent string');
 
 $r['name'];
 // => name of browser (or string like name of user-agent)
