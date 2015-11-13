@@ -2,33 +2,12 @@
 
 namespace Woothee;
 
-use Woothee\AgentCategory\Appliance\DigitalTv;
-use Woothee\AgentCategory\Appliance\Nintendo;
-use Woothee\AgentCategory\Appliance\Playstation;
-use Woothee\AgentCategory\Browser\Firefox;
-use Woothee\AgentCategory\Browser\Msie;
-use Woothee\AgentCategory\Browser\Opera;
-use Woothee\AgentCategory\Browser\SafariChrome;
-use Woothee\AgentCategory\Browser\Sleipnir;
-use Woothee\AgentCategory\Browser\Webview;
-use Woothee\AgentCategory\Crawler\Crawlers;
-use Woothee\AgentCategory\Crawler\Google;
-use Woothee\AgentCategory\Crawler\MayBeCrawler;
-use Woothee\AgentCategory\Misc\DesktopTools;
-use Woothee\AgentCategory\Misc\HttpLibrary;
-use Woothee\AgentCategory\Misc\MayBeRssReader;
-use Woothee\AgentCategory\MobilePhone\Au;
-use Woothee\AgentCategory\MobilePhone\Docomo;
-use Woothee\AgentCategory\MobilePhone\MiscPhones;
-use Woothee\AgentCategory\MobilePhone\Softbank;
-use Woothee\AgentCategory\MobilePhone\Willcom;
-use Woothee\AgentCategory\Os\Appliance;
-use Woothee\AgentCategory\Os\Linux;
-use Woothee\AgentCategory\Os\MiscOs;
-use Woothee\AgentCategory\Os\MobilePhone;
-use Woothee\AgentCategory\Os\Osx;
-use Woothee\AgentCategory\Os\SmartPhone;
-use Woothee\AgentCategory\Os\Windows;
+use Woothee\AgentCategory\Appliance;
+use Woothee\AgentCategory\Browser;
+use Woothee\AgentCategory\Crawler;
+use Woothee\AgentCategory\Misc;
+use Woothee\AgentCategory\MobilePhone;
+use Woothee\AgentCategory\Os;
 
 class Classifier
 {
@@ -51,9 +30,9 @@ class Classifier
 
     public function tryCrawler($ua, &$result)
     {
-        if (Google::challenge($ua, $result)) {
+        if (Crawler\Google::challenge($ua, $result)) {
             return true;
-        } elseif (Crawlers::challenge($ua, $result)) {
+        } elseif (Crawler\Crawlers::challenge($ua, $result)) {
             return true;
         }
 
@@ -62,23 +41,23 @@ class Classifier
 
     public function tryBrowser($ua, &$result)
     {
-        if (Msie::challenge($ua, $result)) {
+        if (Browser\Msie::challenge($ua, $result)) {
             return true;
         }
 
-        if (SafariChrome::challenge($ua, $result)) {
+        if (Browser\SafariChrome::challenge($ua, $result)) {
             return true;
         }
 
-        if (Firefox::challenge($ua, $result)) {
+        if (Browser\Firefox::challenge($ua, $result)) {
             return true;
         }
 
-        if (Opera::challenge($ua, $result)) {
+        if (Browser\Opera::challenge($ua, $result)) {
             return true;
         }
 
-        if (Webview::challenge($ua, $result)) {
+        if (Browser\Webview::challenge($ua, $result)) {
             return true;
         }
 
@@ -87,31 +66,31 @@ class Classifier
 
     public function tryOs($ua, &$result)
     {
-        if (Windows::challenge($ua, $result)) {
+        if (Os\Windows::challenge($ua, $result)) {
             return true;
         }
 
-        if (Osx::challenge($ua, $result)) {
+        if (Os\Osx::challenge($ua, $result)) {
             return true;
         }
 
-        if (Linux::challenge($ua, $result)) {
+        if (Os\Linux::challenge($ua, $result)) {
             return true;
         }
 
-        if (SmartPhone::challenge($ua, $result)) {
+        if (Os\SmartPhone::challenge($ua, $result)) {
             return true;
         }
 
-        if (MobilePhone::challenge($ua, $result)) {
+        if (Os\MobilePhone::challenge($ua, $result)) {
             return true;
         }
 
-        if (Appliance::challenge($ua, $result)) {
+        if (Os\Appliance::challenge($ua, $result)) {
             return true;
         }
 
-        if (MiscOs::challenge($ua, $result)) {
+        if (Os\MiscOs::challenge($ua, $result)) {
             return true;
         }
 
@@ -120,23 +99,23 @@ class Classifier
 
     public function tryMobilePhone($ua, &$result)
     {
-        if (Docomo::challenge($ua, $result)) {
+        if (MobilePhone\Docomo::challenge($ua, $result)) {
             return true;
         }
 
-        if (Au::challenge($ua, $result)) {
+        if (MobilePhone\Au::challenge($ua, $result)) {
             return true;
         }
 
-        if (Softbank::challenge($ua, $result)) {
+        if (MobilePhone\Softbank::challenge($ua, $result)) {
             return true;
         }
 
-        if (Willcom::challenge($ua, $result)) {
+        if (MobilePhone\Willcom::challenge($ua, $result)) {
             return true;
         }
 
-        if (MiscPhones::challenge($ua, $result)) {
+        if (MobilePhone\MiscPhones::challenge($ua, $result)) {
             return true;
         }
 
@@ -145,15 +124,15 @@ class Classifier
 
     public function tryAppliance($ua, &$result)
     {
-        if (Playstation::challenge($ua, $result)) {
+        if (Appliance\Playstation::challenge($ua, $result)) {
             return true;
         }
 
-        if (Nintendo::challenge($ua, $result)) {
+        if (Appliance\Nintendo::challenge($ua, $result)) {
             return true;
         }
 
-        if (DigitalTv::challenge($ua, $result)) {
+        if (Appliance\DigitalTv::challenge($ua, $result)) {
             return true;
         }
 
@@ -162,7 +141,7 @@ class Classifier
 
     public function tryMisc($ua, &$result)
     {
-        if (DesktopTools::challenge($ua, $result)) {
+        if (Misc\DesktopTools::challenge($ua, $result)) {
             return true;
         }
 
@@ -171,19 +150,19 @@ class Classifier
 
     public function tryRareCases($ua, &$result)
     {
-        if (Sleipnir::challenge($ua, $result)) {
+        if (Browser\Sleipnir::challenge($ua, $result)) {
             return true;
         }
 
-        if (HttpLibrary::challenge($ua, $result)) {
+        if (Misc\HttpLibrary::challenge($ua, $result)) {
             return true;
         }
 
-        if (MayBeRssReader::challenge($ua, $result)) {
+        if (Misc\MayBeRssReader::challenge($ua, $result)) {
             return true;
         }
 
-        if (MayBeCrawler::challenge($ua, $result)) {
+        if (Crawler\MayBeCrawler::challenge($ua, $result)) {
             return true;
         }
 
