@@ -21,7 +21,7 @@ class Nintendo extends AbstractCategory
             $data = DataSet::get('NintendoWiiU');
         }
 
-        if (is_null($data)) {
+        if (null === $data) {
             return false;
         }
 

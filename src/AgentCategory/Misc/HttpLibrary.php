@@ -52,7 +52,7 @@ class HttpLibrary extends AbstractCategory
             $version = 'php';
         }
 
-        if (is_null($data)) {
+        if (null === $data) {
             return false;
         }
 

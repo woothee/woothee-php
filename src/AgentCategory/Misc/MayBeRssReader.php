@@ -18,7 +18,7 @@ class MayBeRssReader extends AbstractCategory
             $data = DataSet::get('VariousRSSReader');
         }
 
-        if (is_null($data)) {
+        if (null === $data) {
             return false;
         }
 

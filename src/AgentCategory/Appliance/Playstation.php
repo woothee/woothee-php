@@ -35,7 +35,7 @@ class Playstation extends AbstractCategory
             }
         }
 
-        if (is_null($data)) {
+        if (null === $data) {
             return false;
         }
 
