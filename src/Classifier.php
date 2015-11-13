@@ -15,7 +15,7 @@ class Classifier
 
     public function isCrawler($ua)
     {
-        if (is_null($ua) || strlen($ua) < 1 || $ua === '-') {
+        if (null === $ua || strlen($ua) < 1 || $ua === '-') {
             return false;
         }
 
@@ -207,7 +207,7 @@ class Classifier
     {
         $result = array();
 
-        if (is_null($ua) || strlen($ua) < 1 || $ua === '-') {
+        if (null === $ua || strlen($ua) < 1 || $ua === '-') {
             return $result;
         }
 

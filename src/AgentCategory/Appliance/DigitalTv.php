@@ -15,7 +15,7 @@ class DigitalTv extends AbstractCategory
             $data = DataSet::get('DigitalTV');
         }
 
-        if (is_null($data)) {
+        if (null === $data) {
             return false;
         }
 

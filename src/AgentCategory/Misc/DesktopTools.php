@@ -19,7 +19,7 @@ class DesktopTools extends AbstractCategory
             $data = DataSet::get('WindowsRSSReader');
         }
 
-        if (is_null($data)) {
+        if (null === $data) {
             return false;
         }
 
