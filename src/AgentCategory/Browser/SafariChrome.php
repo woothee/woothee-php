@@ -28,6 +28,19 @@ class SafariChrome extends AbstractCategory
             }
         }
 
+        $fpos = strpos($ua, 'FxiOS');
+
+        if ($fpos > -1) {
+            if (preg_match('/FxiOS\/([.0-9]+)/', $ua, $matches)) {
+                $version = $matches[1];
+
+                static::updateMap($result, DataSet::get('Firefox'));
+                static::updateVersion($result, $version);
+
+                return true;
+            }
+        }
+
         $cpos = strpos($ua, 'Chrome');
 
         if ($cpos === false) {
