@@ -10,6 +10,7 @@ use Woothee\AgentCategory\Browser\Msie;
 use Woothee\AgentCategory\Browser\Opera;
 use Woothee\AgentCategory\Browser\SafariChrome;
 use Woothee\AgentCategory\Browser\Sleipnir;
+use Woothee\AgentCategory\Browser\Vivaldi;
 use Woothee\AgentCategory\Browser\Webview;
 use Woothee\AgentCategory\Crawler\Crawlers;
 use Woothee\AgentCategory\Crawler\Google;
@@ -63,6 +64,10 @@ class Classifier
     public function tryBrowser($ua, &$result)
     {
         if (Msie::challenge($ua, $result)) {
+            return true;
+        }
+
+        if (Vivaldi::challenge($ua, $result)) {
             return true;
         }
 
