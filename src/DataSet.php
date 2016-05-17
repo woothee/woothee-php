@@ -1,7 +1,7 @@
 <?php
 namespace Woothee;
 
-// GENERATED from dataset.yml at Thu Aug 13 20:42:56 JST 2015 by yuya
+// GENERATED from dataset.yml at Tue May 17 02:10:37 JST 2016 by yuya
 class DataSet
 {
     const DATASET_KEY_LABEL            = 'label';
@@ -87,6 +87,12 @@ class DataSet
             'name'     => 'Opera',
             'type'     => 'browser',
             'vendor'   => 'Opera',
+        ),
+        'Vivaldi' => array(
+            'label'    => 'Vivaldi',
+            'name'     => 'Vivaldi',
+            'type'     => 'browser',
+            'vendor'   => 'Vivaldi Technologies',
         ),
         'Sleipnir' => array(
             'label'    => 'Sleipnir',
