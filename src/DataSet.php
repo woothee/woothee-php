@@ -1,7 +1,7 @@
 <?php
 namespace Woothee;
 
-// GENERATED from dataset.yml at Tue May 17 02:10:37 JST 2016 by yuya
+// GENERATED from dataset.yml at Sun Aug 21 20:17:52 JST 2016 by tell_k
 class DataSet
 {
     const DATASET_KEY_LABEL            = 'label';
@@ -517,6 +517,12 @@ class DataSet
         'bingbot' => array(
             'label'    => 'bingbot',
             'name'     => 'bingbot',
+            'type'     => 'full',
+            'category' => 'crawler',
+        ),
+        'BingPreview' => array(
+            'label'    => 'BingPreview',
+            'name'     => 'BingPreview',
             'type'     => 'full',
             'category' => 'crawler',
         ),
