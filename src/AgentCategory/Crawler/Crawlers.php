@@ -45,6 +45,10 @@ class Crawlers extends AbstractCategory
 
                 return true;
             }
+        } elseif (strpos($ua, 'BingPreview') !== false) {
+            static::updateMap($result, DataSet::get('BingPreview'));
+
+            return true;
         } elseif (strpos($ua, 'Baidu') !== false) {
             if (strpos($ua, 'compatible; Baiduspider') !== false || strpos($ua, 'Baiduspider+') !== false || strpos($ua, 'Baiduspider-image+') !== false) {
                 static::updateMap($result, DataSet::get('Baiduspider'));
