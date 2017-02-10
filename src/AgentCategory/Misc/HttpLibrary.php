@@ -50,6 +50,9 @@ class HttpLibrary extends AbstractCategory
             || preg_match('/(?:PEAR |)HTTP_Request(?: class|2)/Du', $ua, $matches) === 1) {
             $data = DataSet::get('HTTPLibrary');
             $version = 'php';
+        } elseif (strpos($ua, 'curl/') === 0) {
+            $data = DataSet::get('HTTPLibrary');
+            $version = 'curl';
         }
 
         if (is_null($data)) {
