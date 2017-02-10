@@ -13,6 +13,10 @@ class SafariChrome extends AbstractCategory
             return false;
         }
 
+        if (strpos($ua, 'Chrome') !== false && strpos($ua, 'wv') !== false) {
+            return false;
+        }
+
         $version = DataSet::VALUE_UNKNOWN;
 
         $epos = strpos($ua, 'Edge');
