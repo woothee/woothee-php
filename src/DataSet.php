@@ -1,7 +1,7 @@
 <?php
 namespace Woothee;
 
-// GENERATED from dataset.yml at Sun Aug 21 20:17:52 JST 2016 by tell_k
+// GENERATED from dataset.yml at Sat Apr 29 16:02:46 JST 2017 by yuya
 class DataSet
 {
     const DATASET_KEY_LABEL            = 'label';
@@ -547,6 +547,12 @@ class DataSet
         'twitter' => array(
             'label'    => 'twitter',
             'name'     => 'twitter',
+            'type'     => 'full',
+            'category' => 'crawler',
+        ),
+        'trendictionbot' => array(
+            'label'    => 'trendictionbot',
+            'name'     => 'trendiction',
             'type'     => 'full',
             'category' => 'crawler',
         ),
