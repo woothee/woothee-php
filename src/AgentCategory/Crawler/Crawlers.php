@@ -127,6 +127,10 @@ class Crawlers extends AbstractCategory
 
                 return true;
             }
+        } elseif (strpos($ua, 'trendictionbot') !== false) {
+            static::updateMap($result, DataSet::get('trendictionbot'));
+
+            return true;
         }
 
         return false;
