@@ -56,7 +56,7 @@ class Crawlers extends AbstractCategory
                 return true;
             }
         } elseif (strpos($ua, 'Yeti') !== false) {
-            if (strpos($ua, 'http://help.naver.com/robots') !== false) {
+            if (strpos($ua, 'http://help.naver.com/robots') !== false || strpos($ua, 'http://help.naver.com/support/robots.html') !== false || strpos($ua, 'http://naver.me/bot') !== false) {
                 static::updateMap($result, DataSet::get('Yeti'));
 
                 return true;
@@ -127,6 +127,10 @@ class Crawlers extends AbstractCategory
 
                 return true;
             }
+        } elseif (strpos($ua, 'trendictionbot') !== false) {
+            static::updateMap($result, DataSet::get('trendictionbot'));
+
+            return true;
         }
 
         return false;
