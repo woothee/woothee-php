@@ -19,6 +19,7 @@
         "fabpot/php-cs-fixer": "1.10.*"
     },
     "autoload": {
-        "psr-4": { "Woothee\\": "src/" }
+        "psr-4": { "Woothee\\": "src/" },
+        "classmap": ["Woothee.php"]
     }
 }

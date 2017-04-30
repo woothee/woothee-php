@@ -7,10 +7,6 @@ use Woothee\Classifier;
 
 class ClassifierTest extends \PHPUnit_Framework_TestCase
 {
-    public function setUp()
-    {
-        $this->classifier = new Classifier();
-    }
 
     /**
      * @test
@@ -18,7 +14,7 @@ class ClassifierTest extends \PHPUnit_Framework_TestCase
      */
     public function testCrawler($param)
     {
-        $this->assertTrue($this->classifier->isCrawler($param['target']));
+        $this->assertTrue(Classifier::isCrawler($param['target']));
     }
 
     public function provideCrawlerTestSet()
@@ -32,7 +28,7 @@ class ClassifierTest extends \PHPUnit_Framework_TestCase
      */
     public function testNonCrawler($param)
     {
-        $this->assertFalse($this->classifier->isCrawler($param['target']));
+        $this->assertFalse(Classifier::isCrawler($param['target']));
     }
 
     public function provideNonCrawlerTestSet()
@@ -65,7 +61,7 @@ class ClassifierTest extends \PHPUnit_Framework_TestCase
         $expected = $param;
         unset($expected['target']);
 
-        $result = $this->classifier->parse($param['target']);
+        $result = Classifier::parse($param['target']);
 
         $this->assertSame($expected['name'], $result['name']);
         $this->assertSame($expected['category'], $result['category']);
@@ -110,7 +106,7 @@ class ClassifierTest extends \PHPUnit_Framework_TestCase
     {
         $ua = 'non mobile phone';
         $result = array();
-        $this->assertFalse($this->classifier->tryMobilePhone($ua, $result));
+        $this->assertFalse(Classifier::tryMobilePhone($ua, $result));
     }
 
     /**
@@ -120,7 +116,7 @@ class ClassifierTest extends \PHPUnit_Framework_TestCase
     public function testNeverExistingParseResult()
     {
         $ua = 'never%existing$user&agent';
-        $result = $this->classifier->parse($ua);
+        $result = Classifier::parse($ua);
 
         $resultKeys = \Woothee\Dataset::$ATTRIBUTE_LIST;
         foreach ($resultKeys as $key) {
