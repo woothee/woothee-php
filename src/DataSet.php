@@ -1,7 +1,7 @@
 <?php
 namespace Woothee;
 
-// GENERATED from dataset.yml at Sat Apr 29 16:02:46 JST 2017 by yuya
+// GENERATED from dataset.yml at Sun Jul 22 02:46:33 JST 2018 by tell_k
 class DataSet
 {
     const DATASET_KEY_LABEL            = 'label';
@@ -105,6 +105,12 @@ class DataSet
             'name'     => 'Webview',
             'type'     => 'browser',
             'vendor'   => 'OS vendor',
+        ),
+        'YaBrowser' => array(
+            'label'    => 'YaBrowser',
+            'name'     => 'Yandex Browser',
+            'type'     => 'browser',
+            'vendor'   => 'Yandex',
         ),
         'Win' => array(
             'label'    => 'Win',
