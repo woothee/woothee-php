@@ -11,6 +11,7 @@ use Woothee\AgentCategory\Browser\Opera;
 use Woothee\AgentCategory\Browser\SafariChrome;
 use Woothee\AgentCategory\Browser\Sleipnir;
 use Woothee\AgentCategory\Browser\Vivaldi;
+use Woothee\AgentCategory\Browser\YandexBrowser;
 use Woothee\AgentCategory\Browser\Webview;
 use Woothee\AgentCategory\Crawler\Crawlers;
 use Woothee\AgentCategory\Crawler\Google;
@@ -33,7 +34,7 @@ use Woothee\AgentCategory\Os\Windows;
 
 class Classifier
 {
-    const VERSION = '1.7.0';
+    const VERSION = '1.8.0';
 
     public function isCrawler($ua)
     {
@@ -68,6 +69,10 @@ class Classifier
         }
 
         if (Vivaldi::challenge($ua, $result)) {
+            return true;
+        }
+
+        if (YandexBrowser::challenge($ua, $result)) {
             return true;
         }
 
