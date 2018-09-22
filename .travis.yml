@@ -10,7 +10,11 @@ php:
   - hhvm
 
 matrix:
+  include:
+    - php: 5.3
+      dist: precise
   allow_failures:
+    - php: 5.3
     - php: 5.4
     - php: 5.5
     - php: hhvm
