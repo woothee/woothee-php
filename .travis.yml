@@ -19,6 +19,10 @@ matrix:
     - php: 5.5
     - php: hhvm
 
+cache:
+  directories:
+    - $HOME/.composer/cache
+
 before_script:
   - composer install
 
