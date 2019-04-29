@@ -17,8 +17,8 @@
     </testsuites>
 
     <filter>
-        <whitelist>
-            <directory>./src/Woothee/</directory>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">src/</directory>
         </whitelist>
     </filter>
 
