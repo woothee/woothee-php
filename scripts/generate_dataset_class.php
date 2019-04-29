@@ -3,8 +3,10 @@ include __DIR__ . '/../vendor/autoload.php';
 
 use Symfony\Component\Yaml\Yaml;
 
-$timestamp = chop(`LANG=C LC_ALL="" date`);
-$user = chop(`LANG=C LC_ALL="" whoami`);
+error_reporting(E_ALL);
+
+$timestamp = date('D M d H:i:s e Y');
+$user = trim(getenv('USER'));
 $dataset = join(",\n",
     array_map(
         function ($element) {
