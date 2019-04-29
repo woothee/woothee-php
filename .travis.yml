@@ -27,5 +27,5 @@ before_script:
 
 script: vendor/bin/phpunit
 
-after_script:
-  - vendor/bin/coveralls -v
+after_success:
+  - if [ -f vendor/bin/php-coveralls ] ; then travis_retry php vendor/bin/php-coveralls -v; else travis_retry php vendor/bin/coveralls -v; fi
