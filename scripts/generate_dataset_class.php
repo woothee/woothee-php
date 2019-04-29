@@ -17,7 +17,7 @@ $dataset = join(",\n",
                  . (isset($element['vendor'])   ? "            'vendor'   => '{$element['vendor']}',\n" : '')
                  . "        )";
         },
-        Symfony\Component\Yaml\Yaml::parse("woothee/dataset.yaml")
+        Symfony\Component\Yaml\Yaml::parse(file_get_contents(__DIR__ . '/../woothee/dataset.yaml'))
     )
 );
 
