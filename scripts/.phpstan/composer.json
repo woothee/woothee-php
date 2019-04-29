@@ -1,0 +1,11 @@
+{
+    "require": {
+        "phpstan/phpstan": "^0.11.4"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "classmap-authoritative": true,
+        "discard-changes": true,
+        "preferred-install": "dist"
+    }
+}

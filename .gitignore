@@ -3,4 +3,8 @@
 /Gemfile.lock
 /build/
 /composer.lock
+/scripts/composer.phar
+/scripts/phan
+/scripts/php-cs-fixer
+/scripts/phpstan
 /vendor/
