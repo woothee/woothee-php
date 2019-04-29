@@ -13,12 +13,14 @@
         "php": ">= 5.3.3"
     },
     "require-dev": {
-        "phpunit/phpunit": "4.8.*",
-        "satooshi/php-coveralls": "0.6.*",
-        "symfony/yaml": "2.7.*",
-        "fabpot/php-cs-fixer": "1.10.*"
+        "phpunit/phpunit": "^7.5 || ^4.8",
+        "php-coveralls/php-coveralls": "^2.1",
+        "symfony/yaml": "^4.2 || ^2.7"
     },
     "autoload": {
         "psr-4": { "Woothee\\": "src/" }
+    },
+    "autoload-dev": {
+        "psr-4": { "Woothee\\": "tests/Woothee/" }
     }
 }
