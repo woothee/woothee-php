@@ -6,9 +6,7 @@
 
 namespace PHPUnit\Framework
 {
-    use PHPUnit_Framework_TestCase;
-
-    if (!class_exists(TestCase::class)) {
+    if (!class_exists('PHPUnit\\Framework\\TestCase')) {
         abstract class TestCase extends PHPUnit_Framework_TestCase
         {
         }
