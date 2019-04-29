@@ -7,7 +7,7 @@ php:
   - 7.0
   - 7.1
   - 7.2
-  - hhvm
+  - 7.3
 
 matrix:
   include:
@@ -17,7 +17,6 @@ matrix:
     - php: 5.3
     - php: 5.4
     - php: 5.5
-    - php: hhvm
 
 cache:
   directories:
@@ -28,5 +27,5 @@ before_script:
 
 script: vendor/bin/phpunit
 
-after_script:
-  - vendor/bin/coveralls -v
+after_success:
+  - if [ -f vendor/bin/php-coveralls ] ; then travis_retry php vendor/bin/php-coveralls -v; else travis_retry php vendor/bin/coveralls -v; fi

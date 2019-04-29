@@ -8,7 +8,6 @@
          convertWarningsToExceptions="true"
          processIsolation="false"
          stopOnFailure="false"
-         syntaxCheck="false"
          bootstrap="tests/bootstrap.php"
 >
     <testsuites>
@@ -18,8 +17,8 @@
     </testsuites>
 
     <filter>
-        <whitelist>
-            <directory>./src/Woothee/</directory>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">src/</directory>
         </whitelist>
     </filter>
 
