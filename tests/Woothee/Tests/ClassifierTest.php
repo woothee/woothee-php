@@ -5,10 +5,11 @@ namespace Woothee\Tests;
 use Symfony\Component\Yaml\Yaml;
 use Woothee\Classifier;
 
-class ClassifierTest extends \PHPUnit_Framework_TestCase
+class ClassifierTest extends TestCase
 {
     public function setUp()
     {
+        parent::setUp();
         $this->classifier = new Classifier();
     }
 

@@ -4,7 +4,7 @@ namespace Woothee\Tests\AgentCategory\Os;
 
 use Woothee\AgentCategory\Os\Windows;
 
-class WindowsTest extends \PHPUnit_Framework_TestCase
+class WindowsTest extends \Woothee\Tests\TestCase
 {
     public function setUp()
     {
