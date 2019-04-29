@@ -1,5 +1,6 @@
 *.swp
 /.bundle/
+/.php_cs.cache
 /Gemfile.lock
 /build/
 /composer.lock
