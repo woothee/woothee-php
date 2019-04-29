@@ -25,4 +25,3 @@ class YandexBrowser extends AbstractCategory
         return true;
     }
 }
-
