@@ -1,0 +1,45 @@
+<?php
+
+$finder = PhpCsFixer\Finder::create()
+    ->in(__DIR__ . '/src')
+    ->in(__DIR__ . '/tests');
+
+return PhpCsFixer\Config::create()
+    ->setRules([
+        '@PSR1' => true,
+        '@PSR2' => true,
+        'array_syntax' => ['syntax' => 'long'],
+        'blank_line_before_statement' => true,
+        'explicit_string_variable' => true,
+        'function_typehint_space' => true,
+        'list_syntax' => ['syntax' => 'long'],
+        'magic_constant_casing' => true,
+        'native_function_casing' => true,
+        'no_extra_blank_lines' => true,
+        'no_leading_import_slash' => true,
+        'no_mixed_echo_print' => ['use' => 'echo'],
+        'no_multiline_whitespace_around_double_arrow' => true,
+        'no_multiline_whitespace_before_semicolons' => true,
+        'no_singleline_whitespace_before_semicolons' => true,
+        'no_spaces_around_offset' => true,
+        'no_trailing_comma_in_singleline_array' => true,
+        'no_unneeded_control_parentheses' => true,
+        'no_unneeded_curly_braces' => true,
+        'no_unset_cast' => true,
+        'no_unused_imports' => true,
+        'no_useless_return' => true,
+        'no_whitespace_before_comma_in_array' => true,
+        'no_whitespace_in_blank_line' => true,
+        'ordered_imports' => true,
+        'short_scalar_cast' => true,
+        'simplified_null_return' => true,
+        'single_quote' => true,
+        'ternary_operator_spaces' => true,
+        'ternary_to_null_coalescing' => true,
+        'trailing_comma_in_multiline_array' => true,
+        'unary_operator_spaces' => true,
+        'whitespace_after_comma_in_array' => true,
+    ])
+    ->setFinder($finder)
+    ->setIndent("    ")
+    ->setLineEnding("\n");

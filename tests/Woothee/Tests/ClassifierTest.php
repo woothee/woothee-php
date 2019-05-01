@@ -7,6 +7,9 @@ use Woothee\Classifier;
 
 class ClassifierTest extends TestCase
 {
+    /** @var Classifier */
+    private $classifier;
+
     public function setUp()
     {
         parent::setUp();
@@ -123,9 +126,9 @@ class ClassifierTest extends TestCase
         $ua = 'never%existing$user&agent';
         $result = $this->classifier->parse($ua);
 
-        $resultKeys = \Woothee\Dataset::$ATTRIBUTE_LIST;
+        $resultKeys = \Woothee\DataSet::$ATTRIBUTE_LIST;
         foreach ($resultKeys as $key) {
-            $this->assertSame(\Woothee\Dataset::VALUE_UNKNOWN, $result[$key]);
+            $this->assertSame(\Woothee\DataSet::VALUE_UNKNOWN, $result[$key]);
         }
     }
 

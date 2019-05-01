@@ -1,0 +1,7 @@
+parameters:
+  level: max
+  paths:
+    - src/
+    - tests/
+  autoload_files:
+    - vendor/autoload.php

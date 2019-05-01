@@ -1,0 +1,11 @@
+{
+    "require": {
+        "friendsofphp/php-cs-fixer": "^2.14"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "classmap-authoritative": true,
+        "discard-changes": true,
+        "preferred-install": "dist"
+    }
+}

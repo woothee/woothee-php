@@ -6,6 +6,9 @@ use Woothee\AgentCategory\Os\Windows;
 
 class WindowsTest extends \Woothee\Tests\TestCase
 {
+    /** @var Windows */
+    private $windows;
+
     public function setUp()
     {
         $this->windows = new Windows();

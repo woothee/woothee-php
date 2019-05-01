@@ -633,7 +633,7 @@ class DataSet
             'name'     => 'misc crawler',
             'type'     => 'full',
             'category' => 'crawler',
-        )
+        ),
     );
 
     public static function get($label)
