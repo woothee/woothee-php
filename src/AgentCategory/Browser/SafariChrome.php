@@ -19,13 +19,18 @@ class SafariChrome extends AbstractCategory
 
         $version = DataSet::VALUE_UNKNOWN;
 
-        if (preg_match('/(?:Edge|Edg|EdgiOS|EdgA)\/([.0-9]+)/', $ua, $matches)) {
-            $version = $matches[1];
+        $epos1 = strpos($ua, 'Edge');
+        $epos2 = strpos($ua, 'Edg');
 
-            static::updateMap($result, DataSet::get('Edge'));
-            static::updateVersion($result, $version);
+        if ($epos1 > -1 || $epos2 > -1 ) {
+            if (preg_match('/(?:Edge|Edg|EdgiOS|EdgA)\/([.0-9]+)/', $ua, $matches)) {
+                $version = $matches[1];
 
-            return true;
+                static::updateMap($result, DataSet::get('Edge'));
+                static::updateVersion($result, $version);
+
+                return true;
+            }
         }
 
         $fpos = strpos($ua, 'FxiOS');
