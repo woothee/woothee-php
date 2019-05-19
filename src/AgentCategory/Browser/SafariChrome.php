@@ -19,10 +19,9 @@ class SafariChrome extends AbstractCategory
 
         $version = DataSet::VALUE_UNKNOWN;
 
-        $epos1 = strpos($ua, 'Edge');
-        $epos2 = strpos($ua, 'Edg');
+        $epos = strpos($ua, 'Edg');
 
-        if ($epos1 > -1 || $epos2 > -1 ) {
+        if ($epos > -1) {
             if (preg_match('/(?:Edge|Edg|EdgiOS|EdgA)\/([.0-9]+)/', $ua, $matches)) {
                 $version = $matches[1];
 
