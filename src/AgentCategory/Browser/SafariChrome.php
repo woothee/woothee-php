@@ -19,10 +19,10 @@ class SafariChrome extends AbstractCategory
 
         $version = DataSet::VALUE_UNKNOWN;
 
-        $epos = strpos($ua, 'Edge');
+        $epos = strpos($ua, 'Edg');
 
         if ($epos > -1) {
-            if (preg_match('#Edge/([.0-9]+)#', $ua, $matches)) {
+            if (preg_match('/(?:Edge|Edg|EdgiOS|EdgA)\/([.0-9]+)/', $ua, $matches)) {
                 $version = $matches[1];
 
                 static::updateMap($result, DataSet::get('Edge'));

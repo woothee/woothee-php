@@ -18,7 +18,8 @@ class Linux extends AbstractCategory
 
         if (strpos($ua, 'Android') !== false) {
             $data = DataSet::get('Android');
-            if (preg_match('/Android[- ](\\d+\\.\\d+(?:\\.\\d+)?)/', $ua, $matches)) {
+
+            if (preg_match('/Android[- ](\\d+(?:\\.\\d+(?:\\.\\d+)?)?)/', $ua, $matches)) {
                 $version = $matches[1];
             }
         }
