@@ -1,6 +1,6 @@
 # Woothee PHP
 
-[![Build Status](https://travis-ci.org/woothee/woothee-php.svg?branch=master)](https://travis-ci.org/woothee/woothee-php)
+[![Build Status](https://github.com/woothee/woothee-php/workflows/ci/badge.svg)](https://github.com/woothee/woothee-php/actions/workflows/ci.yaml)
 [![Coverage Status](https://coveralls.io/repos/woothee/woothee-php/badge.png)](https://coveralls.io/r/woothee/woothee-php)
 [![Packagist](https://img.shields.io/packagist/v/woothee/woothee.svg)](https://packagist.org/packages/woothee/woothee)
 
