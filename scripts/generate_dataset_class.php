@@ -6,8 +6,9 @@ use Symfony\Component\Yaml\Yaml;
 error_reporting(E_ALL);
 
 $timestamp = date('D M d H:i:s e Y');
-$user = trim(getenv('USER'));
-$dataset = join(",\n",
+$user = trim(getenv('USER') ?: '');
+
+$dataset = implode(",\n",
     array_map(
         function ($element) {
             return "        '{$element['label']}' => array(\n"
@@ -19,7 +20,7 @@ $dataset = join(",\n",
                  . (isset($element['vendor'])   ? "            'vendor'   => '{$element['vendor']}',\n" : '')
                  . "        )";
         },
-        Symfony\Component\Yaml\Yaml::parse(file_get_contents(__DIR__ . '/../woothee/dataset.yaml'))
+        Yaml::parse(file_get_contents(__DIR__ . '/../woothee/dataset.yaml') ?: '')
     )
 );
 
@@ -59,6 +60,9 @@ class DataSet
     const ATTRIBUTE_VERSION            = 'version';
     const VALUE_UNKNOWN                = 'UNKNOWN';
 
+    /**
+     * @phpstan-var list<self::DATASET_CATEGORY_*|self::VALUE_UNKNOWN>
+     */
     public static \$CATEGORY_LIST = array(
         self::DATASET_CATEGORY_PC,
         self::DATASET_CATEGORY_SMARTPHONE,
@@ -69,6 +73,9 @@ class DataSet
         self::VALUE_UNKNOWN,
     );
 
+    /**
+     * @phpstan-var list<self::ATTRIBUTE_*>
+     */
     public static \$ATTRIBUTE_LIST = array(
         self::ATTRIBUTE_NAME,
         self::ATTRIBUTE_CATEGORY,
@@ -78,10 +85,17 @@ class DataSet
         self::ATTRIBUTE_VERSION,
     );
 
+    /**
+     * @phpstan-var array<string,array{label:string, name:string, type:self::DATASET_TYPE_*, os?:string, category?:self::DATASET_CATEGORY_*, vendor?:string}>
+     */
     private static \$dataset = array(
 {$dataset}
     );
 
+    /**
+     * @phpstan-param literal-string \$label
+     * @phpstan-return array{label:string, name:string, type:self::DATASET_TYPE_*, os?:string, category?:self::DATASET_CATEGORY_*, vendor?:string}
+     */
     public static function get(\$label)
     {
         return static::\$dataset[\$label];

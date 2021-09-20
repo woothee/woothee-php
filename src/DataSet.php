@@ -32,6 +32,9 @@ class DataSet
     const ATTRIBUTE_VERSION            = 'version';
     const VALUE_UNKNOWN                = 'UNKNOWN';
 
+    /**
+     * @phpstan-var list<self::DATASET_CATEGORY_*|self::VALUE_UNKNOWN>
+     */
     public static $CATEGORY_LIST = array(
         self::DATASET_CATEGORY_PC,
         self::DATASET_CATEGORY_SMARTPHONE,
@@ -42,6 +45,9 @@ class DataSet
         self::VALUE_UNKNOWN,
     );
 
+    /**
+     * @phpstan-var list<self::ATTRIBUTE_*>
+     */
     public static $ATTRIBUTE_LIST = array(
         self::ATTRIBUTE_NAME,
         self::ATTRIBUTE_CATEGORY,
@@ -51,6 +57,9 @@ class DataSet
         self::ATTRIBUTE_VERSION,
     );
 
+    /**
+     * @phpstan-var array<string,array{label:string, name:string, type:self::DATASET_TYPE_*, os?:string, category?:self::DATASET_CATEGORY_*, vendor?:string}>
+     */
     private static $dataset = array(
         'MSIE' => array(
             'label'    => 'MSIE',
@@ -636,6 +645,10 @@ class DataSet
         ),
     );
 
+    /**
+     * @phpstan-param literal-string $label
+     * @phpstan-return array{label:string, name:string, type:self::DATASET_TYPE_*, os?:string, category?:self::DATASET_CATEGORY_*, vendor?:string}
+     */
     public static function get($label)
     {
         return static::$dataset[$label];
