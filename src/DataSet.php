@@ -1,7 +1,7 @@
 <?php
 namespace Woothee;
 
-// GENERATED from dataset.yml at Sun Jul 22 02:46:33 JST 2018 by tell_k
+// GENERATED from dataset.yml at Mon Sep 20 17:44:29 UTC 2021 by tadsan
 class DataSet
 {
     const DATASET_KEY_LABEL            = 'label';
@@ -99,6 +99,12 @@ class DataSet
             'name'     => 'Sleipnir',
             'type'     => 'browser',
             'vendor'   => 'Fenrir Inc.',
+        ),
+        'GSA' => array(
+            'label'    => 'GSA',
+            'name'     => 'Google Search App',
+            'type'     => 'browser',
+            'vendor'   => 'Google',
         ),
         'Webview' => array(
             'label'    => 'Webview',
@@ -633,7 +639,7 @@ class DataSet
             'name'     => 'misc crawler',
             'type'     => 'full',
             'category' => 'crawler',
-        ),
+        )
     );
 
     public static function get($label)
