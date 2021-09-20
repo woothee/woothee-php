@@ -83,6 +83,14 @@ class SafariChrome extends AbstractCategory
             return true;
         }
 
+        if (preg_match('@GSA/([.0-9]+)@', $ua, $matches)) {
+            $version = $matches[1];
+            static::updateMap($result, DataSet::get('GSA'));
+            static::updateVersion($result, $version);
+
+            return true;;
+        }
+
         if (preg_match('/Version\/([.0-9]+)/uD', $ua, $matches)) {
             $version = $matches[1];
         }
