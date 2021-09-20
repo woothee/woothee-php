@@ -1,0 +1,40 @@
+name: ci
+
+on:
+  pull_request:
+    branches: '*'
+  push:
+    branches:
+      - master
+      - main
+      - 'release-*'
+
+jobs:
+  mri:
+    strategy:
+      matrix:
+        os: [ubuntu]
+        php:
+          - '5.3'
+          - '5.4'
+          - '5.5'
+          - '5.6'
+          - '7.0'
+          - '7.1'
+          - '7.2'
+          - '7.3'
+          - '7.4'
+          - '8.0'
+          - '8.1'
+    runs-on: ${{ matrix.os }}-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+        tools: composer:v2
+        env:
+          COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: git submodule update --init
+      - run: composer install
+      - run: make test
