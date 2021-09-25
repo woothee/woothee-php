@@ -25,6 +25,18 @@ class Google extends AbstractCategory
             }
         }
 
+        if (strpos($ua, 'compatible; AdsBot-Google-Mobile;') !== false) {
+            static::updateMap($result, DataSet::get('AdsBotGoogleMobile'));
+
+            return true;
+        }
+
+        if (strpos($ua, 'AdsBot-Google') === 0) {
+            static::updateMap($result, DataSet::get('AdsBotGoogle'));
+
+            return true;
+        }
+
         if (strpos($ua, 'Googlebot-Image/') !== false) {
             static::updateMap($result, DataSet::get('GoogleBot'));
 

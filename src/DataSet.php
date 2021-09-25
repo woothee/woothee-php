@@ -1,7 +1,7 @@
 <?php
 namespace Woothee;
 
-// GENERATED from dataset.yml at Mon Sep 20 17:44:29 UTC 2021 by tadsan
+// GENERATED from dataset.yml at Sat Sep 25 04:34:00 UTC 2021 by tadsan
 class DataSet
 {
     const DATASET_KEY_LABEL            = 'label';
@@ -117,6 +117,12 @@ class DataSet
             'name'     => 'Yandex Browser',
             'type'     => 'browser',
             'vendor'   => 'Yandex',
+        ),
+        'SamsungBrowser' => array(
+            'label'    => 'SamsungBrowser',
+            'name'     => 'SamsungBrowser',
+            'type'     => 'browser',
+            'vendor'   => 'Samsung',
         ),
         'Win' => array(
             'label'    => 'Win',
@@ -637,6 +643,18 @@ class DataSet
         'VariousCrawler' => array(
             'label'    => 'VariousCrawler',
             'name'     => 'misc crawler',
+            'type'     => 'full',
+            'category' => 'crawler',
+        ),
+        'AdsBotGoogleMobile' => array(
+            'label'    => 'AdsBotGoogleMobile',
+            'name'     => 'AdsBot-Google-Mobile',
+            'type'     => 'full',
+            'category' => 'crawler',
+        ),
+        'AdsBotGoogle' => array(
+            'label'    => 'AdsBotGoogle',
+            'name'     => 'AdsBot-Google',
             'type'     => 'full',
             'category' => 'crawler',
         )

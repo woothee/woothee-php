@@ -9,6 +9,7 @@ use Woothee\AgentCategory\Browser\Firefox;
 use Woothee\AgentCategory\Browser\Msie;
 use Woothee\AgentCategory\Browser\Opera;
 use Woothee\AgentCategory\Browser\SafariChrome;
+use Woothee\AgentCategory\Browser\SamsungBrowser;
 use Woothee\AgentCategory\Browser\Sleipnir;
 use Woothee\AgentCategory\Browser\Vivaldi;
 use Woothee\AgentCategory\Browser\Webview;
@@ -73,6 +74,10 @@ class Classifier
         }
 
         if (YandexBrowser::challenge($ua, $result)) {
+            return true;
+        }
+
+        if (SamsungBrowser::challenge($ua, $result)) {
             return true;
         }
 
