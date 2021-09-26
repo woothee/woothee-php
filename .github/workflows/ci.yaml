@@ -11,7 +11,7 @@ on:
       - 'release-*'
 
 jobs:
-  mri:
+  build:
     strategy:
       matrix:
         os: [ubuntu]
