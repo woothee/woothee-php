@@ -1,7 +1,7 @@
 <?php
 namespace Woothee;
 
-// GENERATED from dataset.yml at Sun Jul 22 02:46:33 JST 2018 by tell_k
+// GENERATED from dataset.yml at Sat Sep 25 04:34:00 UTC 2021 by tadsan
 class DataSet
 {
     const DATASET_KEY_LABEL            = 'label';
@@ -100,6 +100,12 @@ class DataSet
             'type'     => 'browser',
             'vendor'   => 'Fenrir Inc.',
         ),
+        'GSA' => array(
+            'label'    => 'GSA',
+            'name'     => 'Google Search App',
+            'type'     => 'browser',
+            'vendor'   => 'Google',
+        ),
         'Webview' => array(
             'label'    => 'Webview',
             'name'     => 'Webview',
@@ -111,6 +117,12 @@ class DataSet
             'name'     => 'Yandex Browser',
             'type'     => 'browser',
             'vendor'   => 'Yandex',
+        ),
+        'SamsungBrowser' => array(
+            'label'    => 'SamsungBrowser',
+            'name'     => 'SamsungBrowser',
+            'type'     => 'browser',
+            'vendor'   => 'Samsung',
         ),
         'Win' => array(
             'label'    => 'Win',
@@ -634,6 +646,18 @@ class DataSet
             'type'     => 'full',
             'category' => 'crawler',
         ),
+        'AdsBotGoogleMobile' => array(
+            'label'    => 'AdsBotGoogleMobile',
+            'name'     => 'AdsBot-Google-Mobile',
+            'type'     => 'full',
+            'category' => 'crawler',
+        ),
+        'AdsBotGoogle' => array(
+            'label'    => 'AdsBotGoogle',
+            'name'     => 'AdsBot-Google',
+            'type'     => 'full',
+            'category' => 'crawler',
+        )
     );
 
     public static function get($label)
