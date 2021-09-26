@@ -1,0 +1,51 @@
+name: ci
+
+on:
+  pull_request:
+    branches:
+      - '**'
+  push:
+    branches:
+      - '**' # Test
+      - master
+      - main
+      - 'release-*'
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        os: [ubuntu]
+        php:
+          - '5.3'
+          - '5.4'
+          - '5.5'
+          - '5.6'
+          - '7.0'
+          - '7.1'
+          - '7.2'
+          - '7.3'
+          - '7.4'
+          - '8.0'
+          - '8.1'
+    runs-on: ${{ matrix.os }}-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          tools: composer:v2
+        env:
+          COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - id: composer-cache
+        run: |
+          echo "::set-output name=dir::$(composer config cache-files-dir)"
+      - uses: actions/cache@v2
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-composer-
+      - run: git submodule update --init
+      - run: composer install --prefer-dist --no-progress --no-suggest
+      - run: make test
