@@ -202,7 +202,8 @@ class Classifier
 
     public function parse($ua)
     {
-        return $this->fillResult($this->execParse($ua));
+        $result = $this->execParse($ua);
+        return $this->fillResult(false === $result ? [] : $result);
     }
 
     private function fillResult($result)
